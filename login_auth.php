@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input_password = $_POST['Password'];
 
     // Query the database for user authentication
-    $query = "SELECT * FROM User WHERE Username = '$input_username' AND Passwords = '$input_password'";
+    $query = "SELECT * FROM User WHERE Username = '$input_username' AND Password = '$input_password'";
     $result = $conn->query($query);
 
     // Check if a user with the given credentials exists
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_SESSION['Username'])) {
             echo "Authentication successful! Welcome, " . $_SESSION['Username'];
             // You can perform further actions or redirection here after successful authentication
-            //header("Location: index.php"); // Redirect to dashboard upon successful login
+            header("Location: test.php"); // Redirect to dashboard upon successful login
         } else {
             echo "Authentication failed. Invalid username or password.";
         }
@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     } else {
         $error = "Invalid username or password";
+        echo $error;
     }
 
     $conn->close(); // Close the database connection
