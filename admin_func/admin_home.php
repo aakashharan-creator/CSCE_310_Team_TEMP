@@ -9,6 +9,8 @@
 
 <body>
     <h1>Admin Home Page</h1>
+
+    <a href="admin_user_page.php">Go to user page</a>
 </body>
 
 </html>
