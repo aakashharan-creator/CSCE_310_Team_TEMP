@@ -1,4 +1,13 @@
 th, td, .admin-user-table {
     border: 1px solid black;
     border-collapse: collapse;
+    position: relative;
+    top: 25px;
+}
+
+.nav-button {
+    position: absolute;
+    color: green;
+    top: 25px;
+    right: 25px;
 }

@@ -17,7 +17,8 @@
     <button onclick="filter('')">Show All</button>
     <br>
     <a href="add_user_page.php">Add Admin</a>
-    <button>Remove User</button>
+    <a href="remove_user_page.php">Remove User</a>
+    <a href="edit_user_page.php">Edit User Details</a>
     <table id="user-table">
         <tr>
             <th>UIN</th>

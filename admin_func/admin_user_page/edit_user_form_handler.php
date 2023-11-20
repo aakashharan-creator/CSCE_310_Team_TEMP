@@ -20,15 +20,15 @@ $discord_name = $_POST['discord_name'];
 $query_uin = "SELECT * FROM User WHERE UIN = '" . $uin . "' or Email = '" . $email . "' or Discord_Name = '" . $discord_name . "' or Username = '" . $user_name . "';";
 $result = $conn->query($query_uin);
 
-if ($result->num_rows >= 1) {
-    echo "<h2>Error: User with that UIN, Email, Discord, or Username already exists</h2>";
+if ($result->num_rows == 0) {
+    echo "<h2>Error: User with that UIN, Email, Discord, or Username doesn't exist</h2>";
     echo "<a href='add_user_page.php'>Go back</a>";
 } else {
     // Query the database for user authentication
-    $query = "INSERT INTO User 
+    $query = "UPDATE User 
                 (UIN, First_Name, M_Initial, Last_Name, Username, `Password`, User_Type, Email, Discord_Name) VALUES
-                " . "('" . $uin . "', '" . $fname . "', '" . $m_init . "', '" . $lname . "', '" . $user_name . "', '" 
-                . $password . "', 'admin', '" . $email . "', '" . $discord_name . "');";
+                " . "('" . $uin . "', '" . $fname . "', '" . $m_init . "', '" . $lname . "', '" . $user_name . "', '"
+        . $password . "', 'admin', '" . $email . "', '" . $discord_name . "');";
 
 
     if ($conn->query($query)) {

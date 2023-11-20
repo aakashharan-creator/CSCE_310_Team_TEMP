@@ -9,18 +9,10 @@ if ($conn->connect_error) {
 
 // Get input from the login form
 $uin = $_POST['uin'];
-$fname = $_POST['fname'];
-$m_init = $_POST['m_init'];
-$lname = $_POST['lname'];
-$user_name = $_POST['user_name'];
-$password = $_POST['password'];
-$email = $_POST['email'];
-$discord_name = $_POST['discord_name'];
 
-$query_uin = "SELECT * FROM User WHERE UIN = '" . $uin . "' or Email = '" . $email . "' or Discord_Name = '" . $discord_name . "' or Username = '" . $user_name . "';";
 $result = $conn->query($query_uin);
 
-if ($result->num_rows >= 1) {
+if ($result->num_rows == 1) {
     echo "<h2>Error: User with that UIN, Email, Discord, or Username already exists</h2>";
     echo "<a href='add_user_page.php'>Go back</a>";
 } else {
