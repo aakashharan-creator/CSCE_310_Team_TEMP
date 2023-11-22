@@ -27,7 +27,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_SESSION['Username'])) {
             echo "Authentication successful! Welcome, " . $_SESSION['Username'];
             // You can perform further actions or redirection here after successful authentication
-            header("Location: test.php"); // Redirect to dashboard upon successful login
+
+            $user = $result->fetch_assoc();
+            $_SESSION["USER_TYPE"] = $user["User_Type"];
+            if ($user["User_Type"] == "student") {
+                header("Location: ../user_func/home.php"); // Redirect to dashboard upon successful login
+            } else {
+                header("Location: ../admin_func/admin_home.php"); // Redirect to dashboard upon successful login
+            }
         } else {
             echo "Authentication failed. Invalid username or password.";
         }
