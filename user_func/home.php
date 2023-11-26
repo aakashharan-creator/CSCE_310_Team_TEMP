@@ -8,10 +8,11 @@
 </head>
 
 <body>
+    <a href="../index.php" style="position: absolute; top:25px; right: 25px;">Logout</a>
     <h1>User Home Page</h1>
-    <h3>Feature 1</h3>
-        <a href="feature1.php">
-            <button>Feature 1</button> 
+    <h3>View Information</h3>
+        <a href="./user_profile_page/view_profile_info.php">
+            <button>View Information</button> 
         </a>
     <h3>Feature 2</h3>
         <a href="feature2.php">
@@ -25,7 +26,6 @@
         <a href="feature4.php">
             <button>Feature 4</button> 
         </a>
-    
 </body>
 
 </html>
