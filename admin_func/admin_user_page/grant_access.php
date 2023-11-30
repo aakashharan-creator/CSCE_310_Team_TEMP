@@ -10,14 +10,17 @@ if ($conn->connect_error) {
 // Get input from the login form
 $uin = $_POST['uin'];
 
-$update_access = "UPDATE User SET has_access = True WHERE UIN = '" . $uin . "';";
-$conn->query($update_access);
+$check_user_exists = "SELECT * FROM User WHERE UIN = '" . $uin . "';";
+$result = $conn->query($check_user_exists);
 
-if ($conn->query($update_access)) {
-    echo "Successfully granted access.";
+if ($result->num_rows == 0) {
+    echo "No user with that UIN exists.";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    $update_access = "UPDATE User SET has_access = True WHERE UIN = '" . $uin . "';";
+    if ($conn->query($update_access)) {
+        echo "Successfully granted access.";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 }
 $conn->close(); // Close the database connection
-
-?>

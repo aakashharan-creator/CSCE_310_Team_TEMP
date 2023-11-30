@@ -37,12 +37,12 @@ if ($row) {
     $conn->query($delete_intern_app);
     $conn->query($delete_cert_enrollment);
     $conn->query($delete_class_enrollment);
-    
+
     $conn->query($delete_track);
     $conn->query($delete_application);
     $conn->query($delete_event_tracking);
     $conn->query($update_event);
-    
+
     $conn->query($delete_user);
     $conn->query($delete_college_student);
     $conn->query($delete_documents);
