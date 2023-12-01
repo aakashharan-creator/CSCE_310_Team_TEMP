@@ -10,23 +10,47 @@ if ($conn->connect_error) {
 // Get input from the login form
 $uin = $_POST['uin'];
 
-$result = $conn->query($query_uin);
+// Query the database for user authentication
+$get_user = "SELECT * FROM User WHERE UIN = '" . $uin . "';";
+$delete_user = "DELETE FROM User WHERE UIN = '" . $uin . "';";
+$delete_event_tracking = "DELETE FROM Event_Tracking WHERE UIN = '" . $uin . "';";
+$delete_college_student = "DELETE FROM College_Student WHERE UIN = '" . $uin . "';";
+$delete_intern_app = "DELETE FROM Intern_App WHERE UIN = '" . $uin . "';";
+$delete_cert_enrollment = "DELETE FROM Cert_Enrollment WHERE UIN = '" . $uin . "';";
+$delete_track = "DELETE FROM Track WHERE UIN = '" . $uin . "';";
+$delete_class_enrollment = "DELETE FROM Class_Enrollment WHERE UIN = '" . $uin . "';";
+// delete documents as well
+$get_app_num = "SELECT App_Num FROM Application WHERE UIN = '" . $uin . "';";
+$delete_application = "DELETE FROM Application WHERE UIN = '" . $uin . "';";
 
-if ($result->num_rows == 1) {
-    echo "<h2>Error: User with that UIN, Email, Discord, or Username already exists</h2>";
-    echo "<a href='add_user_page.php'>Go back</a>";
+$result = $conn->query($get_user);
+$row = $result->fetch_assoc();
+
+if ($row) {
+    $result = $conn->query($get_app_num);
+    $row = $result->fetch_assoc();
+    $app_num = $row["App_Num"];
+
+    $delete_documents = "DELETE FROM Documentation WHERE App_Num = " . $app_num . ";";
+    $update_event = "UPDATE Event SET UIN = '0' WHERE UIN = '" . $uin . "';";
+
+    $conn->query($delete_intern_app);
+    $conn->query($delete_cert_enrollment);
+    $conn->query($delete_class_enrollment);
+
+    $conn->query($delete_track);
+    $conn->query($delete_application);
+    $conn->query($delete_event_tracking);
+    $conn->query($update_event);
+
+    $conn->query($delete_user);
+    $conn->query($delete_college_student);
+    $conn->query($delete_documents);
+
+    echo "Successfully deleted all traces of user from database.";
 } else {
-    // Query the database for user authentication
-    $query = "INSERT INTO User 
-                (UIN, First_Name, M_Initial, Last_Name, Username, `Password`, User_Type, Email, Discord_Name) VALUES
-                " . "('" . $uin . "', '" . $fname . "', '" . $m_init . "', '" . $lname . "', '" . $user_name . "', '" 
-                . $password . "', 'admin', '" . $email . "', '" . $discord_name . "');";
-
-
-    if ($conn->query($query)) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+    echo "No user with that UIN exists.";
 }
+
+
 $conn->close(); // Close the database connection

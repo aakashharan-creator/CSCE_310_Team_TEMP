@@ -25,13 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['Username'] = $input_username; // Set session variable
         // Check if the session variable is set after authentication
         if (isset($_SESSION['Username'])) {
-            echo "Authentication successful! Welcome, " . $_SESSION['Username'];
             // You can perform further actions or redirection here after successful authentication
 
             $user = $result->fetch_assoc();
             $_SESSION["USER_TYPE"] = $user["User_Type"];
             if ($user["User_Type"] == "student") {
-                header("Location: ../user_func/home.php"); // Redirect to dashboard upon successful login
+                if ($user["has_access"])
+                    header("Location: ../user_func/home.php"); // Redirect to dashboard upon successful login
+                else 
+                    echo "Authentication failed. Access to account has been revoked.";
             } else {
                 header("Location: ../admin_func/admin_home.php"); // Redirect to dashboard upon successful login
             }
