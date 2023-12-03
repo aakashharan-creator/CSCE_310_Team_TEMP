@@ -26,5 +26,11 @@
         <a href="./insert_pp/insert_cert_page.php">
             <button>Add Certification</button> 
         </a>
+    <h3>Add new internship enrollment</h3>
+        <a href="./insert_pp/insert_internship_page.php">
+            <button>Add Internship </button> 
+        </a>
 </body>
+
+
 </html>
