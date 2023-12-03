@@ -3,11 +3,6 @@
 session_start();
 $conn = new mysqli('sql9.freemysqlhosting.net', 'sql9658278', 'ZX2Ybn3eNA', 'sql9658278');
 
-// Get input from the insert class
-$input_Class_ID = $_POST['Class_ID'];
-$input_Status = $_POST['Status'];
-$input_Semester = $_POST['Semester'];
-$input_Year = $_POST['Year'];
 
 
 if ($conn->connect_error) {

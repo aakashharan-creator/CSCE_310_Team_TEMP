@@ -22,5 +22,9 @@
         <a href="./insert_pp/insert_class_page.php">
             <button>Add Course</button> 
         </a>
+    <h3>Add new certification enrollment</h3>
+        <a href="./insert_pp/insert_cert_page.php">
+            <button>Add Certification</button> 
+        </a>
 </body>
 </html>

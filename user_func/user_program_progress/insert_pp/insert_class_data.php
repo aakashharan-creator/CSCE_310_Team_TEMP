@@ -1,6 +1,6 @@
 <?php
 
-    // Get input from the insert class
+    // Get input from the insert class form in insert_class_page.php
     $input_UIN = $_POST['UIN'];
     $input_Class_ID = $_POST['Class_ID'];
     $input_Status = $_POST['Status'];
