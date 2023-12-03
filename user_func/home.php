@@ -19,7 +19,7 @@
             <button>Feature 2</button> 
         </a>
     <h3>Feature 3</h3>
-        <a href="./user_program_progress/program_progress_menu.php">
+        <a href="./user_program_progress/program_progress_page.php">
             <button>My program progress</button> 
         </a>
     <h3>Feature 4</h3>
