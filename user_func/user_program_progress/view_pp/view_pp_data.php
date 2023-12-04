@@ -1,67 +1,22 @@
 <?php
 
 session_start();
+$conn = new mysqli('sql9.freemysqlhosting.net', 'sql9658278', 'ZX2Ybn3eNA', 'sql9658278');
 
-// Error reporting
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-
-// Initialize  
-$user_data = array();
-
-// Connect
-$conn = new mysqli('sql9.freemysqlhosting.net','sql9658278','ZX2Ybn3eNA','sql9658278');
-
-// Check connect error
 if ($conn->connect_error) {
-  die("Connect failed: " . $conn->connect_error);
-}
-
-// Prepare statement
-if($stmt = $conn->prepare("SELECT ce.* FROM Cert_Enrollment AS ce WHERE ce.UIN = ?")) {
-
-  // Bind parameter
-  $uin = "120"  
-  if(!$stmt->bind_param("i", $uin)) {
-     echo "Bind failed: " . $stmt->error;
-     exit;
-  }
-   
-  // Execute    
-  if(!$stmt->execute()) {
-     echo "Execute failed: " . $stmt->error;
-     exit;
-  }
-  
-  // Get results
-  $result = $stmt->get_result();
-   
-  // Fetch data 
-  if($row = $result->fetch_assoc()) {
-    $user_data = array(  
-      $row["CertE_Num"],
-      $row["UIN"], 
-      $row["Cert_ID"],
-      $row["Status"],
-      $row["Training_Status"],
-      $row["Program_Num"],
-      $row["Semester"],
-      $row["Year"]
-    );
-
-  } else {
-     echo "Fetch failed: " . $stmt->error;
-     exit;
-  }
-   
+    echo "$conn->connect_error";
+    die("Connection Failed : " . $conn->connect_error);
 } else {
-   echo "Prepare failed: " . $conn->error;
-   exit;
+    //$query = "SELECT * FROM User JOIN College_Student CS ON User.UIN = CS.UIN WHERE User.Username = '" . $_SESSION['Username'] . "';";
+    $query = "SELECT CE.* FROM User LEFT JOIN Cert_Enrollment CE ON User.UIN = CE.UIN WHERE User.Username = '" . $_SESSION['Username'] . "';";
+    $result = mysqli_query($conn, $query);
+    $rows = array();
+    while ($row = $result->fetch_array()) {
+        $value = array($row["CertE_Num"], $row["UIN"], $row["Cert_ID"], $row["Status"], $row["Training_Status"], $row["Program_Num"], $row["Semester"], $row["Year"]);
+        array_push($rows, $value);
+    }
 }
 
-// Close connection
-mysqli_close($conn);  
-
-// Output JSON data
-echo json_encode($user_data);
+echo json_encode($rows);
 
 ?>
