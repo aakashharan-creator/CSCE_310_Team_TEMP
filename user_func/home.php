@@ -20,11 +20,11 @@
         </a>
     <h3>My Program Progress</h3>
         <a href="./user_program_progress/program_progress_page.php">
-            <button>Program progress</button> 
+            <button>Program Progress</button> 
         </a>
-    <h3>Feature 4</h3>
-        <a href="feature4.php">
-            <button>Feature 4</button> 
+    <h3>My Documents</h3>
+        <a href="./user_doc/document_page.php">
+            <button>Documents</button> 
         </a>
 </body>
 
