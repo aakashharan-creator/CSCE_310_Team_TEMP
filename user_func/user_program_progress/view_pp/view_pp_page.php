@@ -23,6 +23,7 @@
             <th>Year</th>
         </tr>
     </table>
+
     <h2>Classes</h2>
     <table id="user-data2">
         <tr>
@@ -31,6 +32,17 @@
             <th>Class_ID</th>
             <th>Status</th>
             <th>Semester</th>
+            <th>Year</th>
+        </tr>
+    </table>
+
+    <h2>Internships</h2>
+    <table id="user-data3">
+        <tr>
+            <th>IA_Num</th>
+            <th>UIN</th>
+            <th>Intern_ID</th>
+            <th>Status</th>
             <th>Year</th>
         </tr>
     </table>

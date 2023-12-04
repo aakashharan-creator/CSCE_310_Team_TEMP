@@ -4,7 +4,7 @@ function populateUserData() {
     const certTable = document.getElementById("user-data");
   
     // Populate certification table
-    fetch("view_pp_data.php")
+    fetch("view_cert_data.php")
       .then(response => response.json()) 
       .then(data => {
         for(let i = 0; i < data.length; i++) {
@@ -42,4 +42,25 @@ function populateUserData() {
           classTable.appendChild(classRow);
         }
       });
+
+      // Get internships table
+  const internTable = document.getElementById("user-data3");
+
+  fetch("view_internship_data.php")
+    .then(response => response.json())
+    .then(data => {
+      for(let i = 0; i < data.length; i++) {
+
+        let row = document.createElement("tr");
+        
+        for(let j = 0; j < data[i].length; j++){
+           let cell = document.createElement("td");
+           cell.innerHTML = data[i][j];
+           
+           row.appendChild(cell);
+        }
+
+        internTable.appendChild(row);
+      }
+    });
   }
