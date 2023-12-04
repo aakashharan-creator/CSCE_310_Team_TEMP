@@ -1,16 +1,4 @@
-<!--
-CertE_Num
-UIN
-Cert_ID
-Status
-Training_Status
-Program_Num
-Semester
-Year
--->
-
 <?php
-
     // Get input from the insert class form in insert_cert_page.php
     $input_CertE_Num = $_POST['CertE_Num'];
     $input_UIN = $_POST['UIN'];
@@ -33,9 +21,9 @@ Year
 		$result_certID = $conn->query($update_certID);
 
         if (!$result_certID) {
-        echo "Could not update Cert_ID";
+        echo "Could not update Cert_ID<br>";
         } else {
-        echo "Updated Cert_ID successfully!";  
+        echo "Updated Cert_ID successfully!<br>";  
         }
 
         // Update Status 
@@ -43,30 +31,51 @@ Year
         $result_status = $conn->query($update_status); 
         
         if (!$result_status) {
-            echo "Could not update status";
+            echo "Could not update status<br>";
             } else {
-            echo "Updated status successfully!";  
+            echo "Updated status successfully!<br>";  
         }
 
         // Update Training Status 
         $update_training_status = "UPDATE Cert_Enrollment SET Training_Status = '". $input_Training_Status ."' WHERE CertE_Num = '". $input_CertE_Num . "';";
         $result_training_status = $conn->query($update_training_status); 
-        echo $update_training_status;
         
         if (!$result_training_status) {
-            echo "Could not update training status";
+            echo "Could not update training status<br>";
             } else {
-            echo "Updated training status successfully!";  
+            echo "Updated training status successfully!<br>";  
         }
+
+        // Proram Number
+        $update_program_num = "UPDATE Cert_Enrollment SET Program_Num = '". $input_Program_Num ."' WHERE CertE_Num = '". $input_CertE_Num . "';";
+        $result_program_num = $conn->query($update_program_num); 
+        
+        if (!$result_program_num) {
+            echo "Could not update program number<br>";
+            } else {
+            echo "Updated program number successfully!<br>";  
+        }
+
+        // Update Sesmester
+        $update_semester = "UPDATE Cert_Enrollment SET Semester = '". $input_Semester ."' WHERE CertE_Num = '". $input_CertE_Num . "';";
+        $result_semester = $conn->query($update_semester); 
+        
+        if (!$result_semester) {
+            echo "Could not update semester<br>";
+            } else {
+            echo "Updated semester successfully!<br>";  
+        }
+
+        // Update Year
+        $update_year = "UPDATE Cert_Enrollment SET Year = '". $input_Year ."' WHERE CertE_Num = '". $input_CertE_Num . "';";
+        $result_year = $conn->query($update_year); 
+        
+        if (!$result_year) {
+            echo "Could not update year<br>";
+            } else {
+            echo "Updated year successfully!<br>";  
+        }
+        
         
 	}
 ?>
-
-<!--
-$query_uin = "SELECT * FROM User WHERE UIN = '" . $uin . "' or Email = '" . $email . "' or Discord_Name = '" . $discord_name . "' or Username = '" . $user_name . "';";
-$result = $conn->query($query_uin);
-
-UPDATE Cert_Enrollment
-SET Cert_ID = 2
-WHERE CertE_Num = 1;
--->
