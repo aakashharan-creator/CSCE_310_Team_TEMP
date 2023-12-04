@@ -23,34 +23,16 @@
             <th>Year</th>
         </tr>
     </table>
-
     <h2>Classes</h2>
     <table id="user-data2">
         <tr>
-            <th>CertE_Num</th>
+            <th>CE_Num</th>
             <th>UIN</th>
-            <th>Cert_ID</th>
+            <th>Class_ID</th>
             <th>Status</th>
-            <th>Training_Status</th>
-            <th>Program_Num</th>
             <th>Semester</th>
             <th>Year</th>
         </tr>
     </table>
-
-    <h2>Internships</h2>
-    <table id="user-data3">
-        <tr>
-            <th>CertE_Num</th>
-            <th>UIN</th>
-            <th>Cert_ID</th>
-            <th>Status</th>
-            <th>Training_Status</th>
-            <th>Program_Num</th>
-            <th>Semester</th>
-            <th>Year</th>
-        </tr>
-    </table>
-
 </body>
 </html>

@@ -1,68 +1,45 @@
 function populateUserData() {
-    let table = document.getElementById("user-data");
+
+    // Get certification table
+    const certTable = document.getElementById("user-data");
+  
+    // Populate certification table
     fetch("view_pp_data.php")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        for (let i = 0; i < data.length; i++) {
-          let row = document.createElement("tr");
+      .then(response => response.json()) 
+      .then(data => {
+        for(let i = 0; i < data.length; i++) {
+          let certRow = document.createElement("tr");
   
-          let username = document.createElement("td");
-  
-          for (let k = 0; k < data[i].length; k++) {
-            let username_val = document.createElement("td");
-            username_val.innerHTML = data[i][k];
-            
-            row.appendChild(username_val);
+          for(let j = 0; j < data[i].length; j++) {
+             let cell = document.createElement("td");
+             cell.innerHTML = data[i][j];
+             
+             certRow.appendChild(cell);
           }
   
-          table.appendChild(row);
+          certTable.appendChild(certRow);  
         }
-      })
-
-    let table2 = document.getElementById("user-data2");
-    fetch("view_pp_data.php")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        for (let i = 0; i < data.length; i++) {
-          let row = document.createElement("tr");
+      });
   
-          let username = document.createElement("td");
+    // Get classes table 
+    const classTable = document.getElementById("user-data2");
   
-          for (let k = 0; k < data[i].length; k++) {
-            let username_val = document.createElement("td");
-            username_val.innerHTML = data[i][k];
-            
-            row.appendChild(username_val);
+    // Populate classes table
+    fetch("view_class_data.php")
+      .then(response => response.json())
+      .then(data => {
+        for(let i = 0; i < data.length; i++) {
+          
+          let classRow = document.createElement("tr");
+  
+          for(let j = 0; j < data[i].length; j++) {
+             let cell = document.createElement("td");
+             cell.innerHTML = data[i][j];
+             
+             classRow.appendChild(cell); 
           }
   
-          table2.appendChild(row);
+          classTable.appendChild(classRow);
         }
-      })
-
-
-    let table3 = document.getElementById("user-data3");
-    fetch("view_pp_data.php")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        for (let i = 0; i < data.length; i++) {
-          let row = document.createElement("tr");
-  
-          let username = document.createElement("td");
-  
-          for (let k = 0; k < data[i].length; k++) {
-            let username_val = document.createElement("td");
-            username_val.innerHTML = data[i][k];
-            
-            row.appendChild(username_val);
-          }
-  
-          table3.appendChild(row);
-        }
-      })
+      });
   }
