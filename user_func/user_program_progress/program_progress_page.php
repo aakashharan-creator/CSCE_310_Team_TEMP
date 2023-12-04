@@ -13,11 +13,9 @@
 
 
     <h3>View my current program progress</h3>
-    <a href="./view_program_progress.php">
+    <a href="./view_pp/view_pp_page.php">
             <button>View Programs</button> 
     </a>
-
-
     <h3>Add new class enrollment</h3>
         <a href="./insert_pp/insert_class_page.php">
             <button>Add Course</button> 

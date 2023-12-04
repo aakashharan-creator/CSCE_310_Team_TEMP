@@ -18,13 +18,14 @@
         <a href="feature2.php">
             <button>Feature 2</button> 
         </a>
-    <h3>Feature 3</h3>
+    <h3>My Program Progress</h3>
         <a href="./user_program_progress/program_progress_page.php">
-            <button>My program progress</button> 
+            <button>Program progress</button> 
         </a>
     <h3>Feature 4</h3>
         <a href="feature4.php">
             <button>Feature 4</button> 
         </a>
 </body>
+
 </html>
