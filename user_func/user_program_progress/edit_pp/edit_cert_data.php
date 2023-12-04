@@ -1,7 +1,6 @@
 <?php
     // Get input from the insert class form in insert_cert_page.php
     $input_CertE_Num = $_POST['CertE_Num'];
-    $input_UIN = $_POST['UIN'];
     $input_Cert_ID = $_POST['Cert_ID'];
     $input_Status = $_POST['Status'];
     $input_Training_Status = $_POST['Training_Status'];
