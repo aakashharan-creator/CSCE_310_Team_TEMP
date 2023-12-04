@@ -28,6 +28,36 @@
         <a href="./insert_pp/insert_internship_page.php">
             <button>Add Internship </button> 
         </a>
+
+    
+    <h3>Edit existing class enrollment</h3>
+        <a href="./edit_pp/edit_class_page.php">
+            <button>Edit Class</button> 
+        </a>
+    <h3>Edit existing certification enrollment</h3>
+        <a href="./edit_pp/edit_cert_page.php">
+            <button>Edit Certification</button> 
+        </a>
+    <h3>Edit existing internship enrollment</h3>
+        <a href="./edit_pp/edit_internship_page.php">
+            <button>Edit Internship </button> 
+        </a>
+
+
+    <h3>Delete existing class enrollment</h3>
+        <a href="./delete_pp/delete_class_page.php">
+            <button>Delete Class</button> 
+        </a>
+    <h3>Delete existing certification enrollment</h3>
+        <a href="./delete_pp/delete_cert_page.php">
+            <button>Delete Certification</button> 
+        </a>
+    <h3>Delete existing internship enrollment</h3>
+        <a href="./delete_pp/delete_internship_page.php">
+            <button>Delete Internship </button> 
+        </a>
+
+    
 </body>
 
 

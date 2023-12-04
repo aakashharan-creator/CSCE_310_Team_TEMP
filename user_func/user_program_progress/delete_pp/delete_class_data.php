@@ -1,11 +1,11 @@
 <!--
-   DELETE FROM Cert_Enrollment
-    WHERE CertE_Num = 4;
+   DELETE FROM CE_Enrollment
+    WHERE CE_Num = 4;
 -->
 
 <?php
     // Get input from the insert class form in insert_cert_page.php
-    $input_CertE_Num = $_POST['CertE_Num'];
+    $input_CE_Num = $_POST['CE_Num'];
 
 	// Database connection
 	$conn = new mysqli('sql9.freemysqlhosting.net', 'sql9658278', 'ZX2Ybn3eNA', 'sql9658278');
@@ -15,14 +15,14 @@
 	} else {
 
         // delete certification record
-		$delete_cert = "DELETE FROM Cert_Enrollment WHERE CertE_Num = '" . $input_CertE_Num . "';";
-		$result_certID = $conn->query($delete_cert);
-        echo $update_certID;
+		$delete_class = "DELETE FROM Class_Enrollment WHERE CE_Num = '" . $input_CE_Num . "';";
+		$result_class = $conn->query($delete_class);
+        echo $delete_class;
 
-        if (!$result_certID) {
-        echo "Could not delete certificate<br>";
+        if (!$result_class) {
+        echo "Could not delete class<br>";
         } else {
-        echo "Deleted certificate successfully!<br>";  
+        echo "Deleted class successfully!<br>";  
         }
         
         
