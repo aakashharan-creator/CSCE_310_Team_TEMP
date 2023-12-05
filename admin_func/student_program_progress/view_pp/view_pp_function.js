@@ -1,23 +1,26 @@
-function populateUserData(rows) {
+function populateUserData() {
 
-  // Get just first row 
-  let row = rows[0];  
-
-  // Build single row
-  let tr = createRow(row);
-
-  // Append
-  table.appendChild(tr);
-
-}
-
-function createRow(row) {
-
-  // Row element
-  let tr = document.createElement("tr");
-
-  // Logic to create cells  
-  // Append cells
-
-  return tr;
-}
+    // Get certification table
+    const certTable = document.getElementById("user-data");
+  
+    // Populate certification table
+    fetch("view_cert_data.php")
+      .then(response => response.json()) 
+      .then(data => {
+        console.log(data); // print data to console
+        for(let i = 0; i < data.length; i++) {
+          let certRow = document.createElement("tr");
+  
+          for(let j = 0; j < data[i].length; j++) {
+             let cell = document.createElement("td");
+             cell.innerHTML = data[i][j];
+             
+             certRow.appendChild(cell);
+          }
+  
+          certTable.appendChild(certRow);  
+        }
+      });
+  
+    
+  }

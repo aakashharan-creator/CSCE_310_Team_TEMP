@@ -1,17 +1,3 @@
-<?php
-
-// Start session
-session_start();
-
-// Check if rows data exists
-if(isset($_SESSION['rows'])) {
-  $rows = $_SESSION['rows']; 
-}
-echo "<pre>";
-print_r($rows); 
-echo "</pre>";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,22 +7,45 @@ echo "</pre>";
     <script src="view_pp_function.js"></script>
     <title>Document</title>
 </head>
-    <body onload="populateUserData()">
-        <h1>Students current certifications</h1>
-        <h2>Certifications</h2>
-        <a href="../home.php" style="position: absolute; top: 25px; right: 25px;">Go back</a>
+<body onload="populateUserData()">
+    <h1>My current programs</h1>
+    <h2>Certifications</h2>
+    <a href="../home.php" style="position: absolute; top: 25px; right: 25px;">Go back</a>
 
-        <table id="user-data">
-            <tr>
-                <th>CertE_Num</th>
-                <th>UIN</th>
-                <th>Cert_ID</th>
-                <th>Status</th>
-                <th>Training_Status</th>
-                <th>Program_Num</th>
-                <th>Semester</th>
-                <th>Year</th>
-            </tr>
-        </table>
-    </body>
+    <table id="user-data">
+        <tr>
+            <th>CertE_Num</th>
+            <th>UIN</th>
+            <th>Cert_ID</th>
+            <th>Status</th>
+            <th>Training_Status</th>
+            <th>Program_Num</th>
+            <th>Semester</th>
+            <th>Year</th>
+        </tr>
+    </table>
+
+    <h2>Classes</h2>
+    <table id="user-data2">
+        <tr>
+            <th>CE_Num</th>
+            <th>UIN</th>
+            <th>Class_ID</th>
+            <th>Status</th>
+            <th>Semester</th>
+            <th>Year</th>
+        </tr>
+    </table>
+
+    <h2>Internships</h2>
+    <table id="user-data3">
+        <tr>
+            <th>IA_Num</th>
+            <th>UIN</th>
+            <th>Intern_ID</th>
+            <th>Status</th>
+            <th>Year</th>
+        </tr>
+    </table>
+</body>
 </html>

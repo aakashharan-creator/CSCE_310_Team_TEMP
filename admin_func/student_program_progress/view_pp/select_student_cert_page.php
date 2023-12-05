@@ -1,21 +1,35 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Student certification progress</title> 
+   <title>Search Certificates</title>
 </head>
-    <body>
-    <h1> Student certification progress </h1>
-      <p> Enter a students UIN to see their certificate progress </p>
-      <form method="post" action="view_cert_data.php">
+<body>
 
-      <div>
-          <div>
-          <label>UIN</label><br>
-          <input type="text" name="UIN" required>
-      </div>
+    <h1>Search for Certificates</h1>
+    
+    <form method="post">
+        <input type="text" name="UIN">
+        <input type="submit" value="View Certs">
+    </form>
 
-      <input type="submit" value="submit">
-
-      </form>
-    </body>
+</body>
 </html>
+
+<?php
+
+if($_POST) {
+
+  $uin = $_POST['UIN'];
+
+  $_SESSION['ViewUIN'] = $uin;
+
+  header("Location: view_cert_data.php");
+  exit;
+
+}
+
+?>
