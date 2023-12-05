@@ -22,30 +22,10 @@
             <th>Program_Num</th>
             <th>Semester</th>
             <th>Year</th>
+            <th>TEST</th>
+
         </tr>
     </table>
 
-    <h2>Classes</h2>
-    <table id="user-data2">
-        <tr>
-            <th>CE_Num</th>
-            <th>UIN</th>
-            <th>Class_ID</th>
-            <th>Status</th>
-            <th>Semester</th>
-            <th>Year</th>
-        </tr>
-    </table>
-
-    <h2>Internships</h2>
-    <table id="user-data3">
-        <tr>
-            <th>IA_Num</th>
-            <th>UIN</th>
-            <th>Intern_ID</th>
-            <th>Status</th>
-            <th>Year</th>
-        </tr>
-    </table>
 </body>
 </html>

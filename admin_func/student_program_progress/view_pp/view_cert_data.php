@@ -21,7 +21,7 @@ $result = mysqli_query($conn, $sql);
 <!DOCTYPE html>
 <html>
 <head>
-  <title>View Certificates</title>
+  <title>View students current certificate progresss</title>
 </head>
 
 <body>
@@ -31,10 +31,15 @@ $result = mysqli_query($conn, $sql);
 <table>
 <thead>
   <tr>
-    <th>Cert Number</th>  
+    <th>Cert Num</th>  
     <th>UIN</th>
-    <th>Cert Name</th>
+    <th>Cert_ID</th>
     <th>Status</th> 
+    <th>Training Status</th> 
+    <th>Program Number</th> 
+    <th>Semester</th> 
+    <th>Year</th> 
+    
   </tr>  
 </thead>
 
@@ -49,6 +54,9 @@ $result = mysqli_query($conn, $sql);
     <td><?php echo $row['Status']; ?></td>
     <td><?php echo $row['Training_Status']; ?></td>
     <td><?php echo $row['Program_Num']; ?></td>
+    <td><?php echo $row['Semester']; ?></td>
+    <td><?php echo $row['Year']; ?></td>
+    
   </tr>
 
 <?php } ?>

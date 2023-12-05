@@ -5,15 +5,15 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Search Certificates</title>
+   <title>Student certificate progress</title>
 </head>
 <body>
 
-    <h1>Search for Certificates</h1>
-    
+    <h2>Student certificate progress</h2>
+    <p>Enter a students UIN to see their certificate progress</p>
     <form method="post">
         <input type="text" name="UIN">
-        <input type="submit" value="View Certs">
+        <input type="submit" value="Submit">
     </form>
 
 </body>
