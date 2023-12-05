@@ -14,17 +14,36 @@
 
     <h3>View a students certificate progress</h3>
     <a href="./view_pp/select_student_cert_page.php">
-            <button>View student program progress</button> 
+            <button>View student certificates</button> 
     </a>
 
     <h3>View a students class progress</h3>
     <a href="./view_pp/select_student_class_page.php">
-            <button>View student program progress</button> 
+            <button>View student classes</button> 
     </a>
 
     <h3>View a students internship progresss</h3>
     <a href="./view_pp/select_student_internship_page.php">
-            <button>View student program progress</button> 
+            <button>View student internships</button> 
+    </a>
+
+    <br>
+    <br>
+    <br>
+
+    <h3>Insert a students certificate progress</h3>
+    <a href="./insert_pp/insert_cert_page.php">
+            <button>Insert certificate progress</button> 
+    </a>
+
+    <h3>Insert a students class progress</h3>
+    <a href="./insert_pp/insert_class_page.php">
+            <button>Insert class progress</button> 
+    </a>
+
+    <h3>Insert a students internship progress</h3>
+    <a href="./insert_pp/insert_internship_page.php">
+            <button>Insert internship progress</button> 
     </a>
 
     

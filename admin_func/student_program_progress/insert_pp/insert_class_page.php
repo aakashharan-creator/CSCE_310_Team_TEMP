@@ -1,14 +1,19 @@
+
+<!--
+  INSERT INTO Class_Enrollment (UIN, Class_ID, Status, Semester, Year)
+  VALUES ("120", "310", "In progess", "Fall", "2023");
+-->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Insert Certificate</title> 
+  <title>Insert Class</title> 
 </head>
 
     <body>
 
-    <h1>Insert Certificate</h1>
+    <h1>Insert Class</h1>
 
-      <form method="post" action="insert_cert_data.php">
+      <form method="post" action="insert_class_data.php">
 
       <div>
           <label>UIN</label><br>
@@ -16,23 +21,13 @@
           </div>
 
           <div>
-          <label>Certification ID</label><br>
-          <input type="text" name="Cert_ID" required>
+          <label>Class_ID</label><br>
+          <input type="text" name="Class_ID" required>
           </div>
           
           <div>
           <label>Status</label><br>
           <input type="text" name="Status" required>
-          </div>
-
-          <div>
-          <label>Training Status</label><br>
-          <input type="text" name="Training_Status" required>
-          </div>
-
-          <div>
-          <label>Program Number</label><br>
-          <input type="text" name="Program_Num" required> 
           </div>
 
           <div>

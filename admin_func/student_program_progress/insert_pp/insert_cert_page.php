@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Insert Certificate</title> 
+  <title>Insert Students Certificate</title> 
 </head>
 
     <body>
 
     <h1>Insert Certificate</h1>
-
+      <p>All fields required</p>
+      
       <form method="post" action="insert_cert_data.php">
 
       <div>
