@@ -18,12 +18,12 @@
     </a>
 
     <h3>Edit a students program progress</h3>
-    <a href="./view_pp/view_pp_page.php">
+    <a href="./view_pp/select_student_class_page.php">
             <button>View student program progress</button> 
     </a>
 
     <h3>Insert a students program progress</h3>
-    <a href="./view_pp/view_pp_page.php">
+    <a href="./view_pp/select_student_internship_page.php">
             <button>View student program progress</button> 
     </a>
 
