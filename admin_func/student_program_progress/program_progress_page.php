@@ -12,17 +12,17 @@
     <h1>Student Program Progress Page</h1>
 
 
-    <h3>View a students current program progress</h3>
+    <h3>View a students certificate progress</h3>
     <a href="./view_pp/select_student_cert_page.php">
             <button>View student program progress</button> 
     </a>
 
-    <h3>Edit a students program progress</h3>
+    <h3>View a students class progress</h3>
     <a href="./view_pp/select_student_class_page.php">
             <button>View student program progress</button> 
     </a>
 
-    <h3>Insert a students program progress</h3>
+    <h3>View a students internship progresss</h3>
     <a href="./view_pp/select_student_internship_page.php">
             <button>View student program progress</button> 
     </a>
