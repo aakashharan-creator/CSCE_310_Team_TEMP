@@ -31,7 +31,10 @@
             <button>Add Internship </button> 
         </a>
 
-    
+    <br>
+    <br>
+    <br>
+
     <h3>Edit existing class enrollment</h3>
         <a href="./edit_pp/edit_class_page.php">
             <button>Edit Class</button> 
@@ -45,6 +48,9 @@
             <button>Edit Internship </button> 
         </a>
 
+    <br>
+    <br>
+    <br>
 
     <h3>Delete existing class enrollment</h3>
         <a href="./delete_pp/delete_class_page.php">

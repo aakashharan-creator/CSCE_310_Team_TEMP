@@ -10,7 +10,7 @@
 <body onload="populateUserData()">
     <h1>My current programs</h1>
     <h2>Certifications</h2>
-    <a href="../home.php" style="position: absolute; top: 25px; right: 25px;">Go back</a>
+    <a href="../program_progress_page.php" style="position: absolute; top: 25px; right: 25px;">Go back</a>
 
     <table id="user-data">
         <tr>
