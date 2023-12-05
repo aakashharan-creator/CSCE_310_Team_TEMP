@@ -9,6 +9,7 @@
 
 <body>
     <a href="../index.php" style="position: absolute; top:25px; right: 25px;">Logout</a>
+    <a href="../user_home_page.php" style="position: absolute; top:50px; right: 25px;">Home Page</a>
     <h1>Program Progress Page</h1>
 
 
@@ -17,6 +18,9 @@
             <button>View Programs</button> 
     </a>
 
+    <br>
+    <br>
+    <br>
     
     <h3>Add new class enrollment</h3>
         <a href="./insert_pp/insert_class_page.php">
@@ -65,6 +69,9 @@
             <button>Delete Internship </button> 
         </a>
 
+    <br>
+    <br>
+    <br>
     
 </body>
 
