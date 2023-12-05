@@ -17,7 +17,7 @@ Semester
       <form method="post" action="edit_class_data.php">
 
       <div>
-          <label>CE Num</label><br>
+          <label>CE_Num</label><br>
           <input type="text" name="CE_Num" required>
           </div>
 

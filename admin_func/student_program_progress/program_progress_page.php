@@ -46,6 +46,25 @@
             <button>Insert internship progress</button> 
     </a>
 
+    <br>
+    <br>
+    <br>
+
+    <h3>Edit a students certificate progress</h3>
+    <a href="./edit_pp/edit_cert_page.php">
+            <button>Edit certificate progress</button> 
+    </a>
+
+    <h3>Edit a students class progress</h3>
+    <a href="./edit_pp/edit_class_page.php">
+            <button>Edit class progress</button> 
+    </a>
+
+    <h3>Edit a students internship progress</h3>
+    <a href="./edit_pp/edit_internship_page.php">
+            <button>Edit internship progress</button> 
+    </a>
+
     
     
 </body>

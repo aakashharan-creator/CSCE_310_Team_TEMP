@@ -20,10 +20,14 @@ Year
 
       <div>
       <div>
-          <label>CertE_ID</label><br>
-          <input type="text" name="Cert_ID" required>
+          <label>CertE_Num</label><br>
+          <input type="text" name="CertE_Num" required>
           </div>
 
+          <label>UIN<label><br>
+          <input type="text" name="UIN" required>
+          </div>
+        
           <div>
           <label>Cert_ID</label><br>
           <input type="text" name="Cert_ID" required>
