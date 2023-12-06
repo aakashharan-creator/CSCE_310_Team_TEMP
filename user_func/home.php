@@ -14,10 +14,6 @@
         <a href="./user_profile_page/view_profile_info.php">
             <button>View Information</button> 
         </a>
-    <h3>Feature 2</h3>
-        <a href="feature2.php">
-            <button>Feature 2</button> 
-        </a>
     <h3>My Program Progress</h3>
         <a href="./user_program_progress/program_progress_page.php">
             <button>Program Progress</button> 

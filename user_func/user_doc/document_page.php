@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="view_style.css">
+    <link rel="stylesheet" href="view_style_doc.css">
     <script src="document_data.js"></script>
     <title>Document Page</title>
 </head>
