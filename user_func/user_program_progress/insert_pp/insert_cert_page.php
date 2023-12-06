@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>Insert Course</title> 
-  <script defer src="validate_insert.js"></script>
+  <script defer src="validate_insert_cert.js"></script>
 </head>
 
     <body>
