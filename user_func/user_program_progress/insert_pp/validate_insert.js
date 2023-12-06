@@ -5,7 +5,6 @@ const training_status = document.getElementById('Training_Status')
 const program_num = document.getElementById('Program_Num')
 const semester = document.getElementById('Semester')
 const year = document.getElementById('Year')
-
 const form = document.getElementById('form')
 const errorElement = document.getElementById('error')
 const validStatuses = ['Done', 'In Progress', 'Not Started'];
@@ -41,7 +40,6 @@ form.addEventListener('submit', (e) => {
   if (!validSemester.includes(semester.value)) {
     messages.push('Semester must be "Fall", "Spring" or "Summer"')
   }
-  
   
   // check cert_ID
   if (year.value.length > 4 || year.value.length < 4) {

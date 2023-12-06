@@ -18,20 +18,17 @@
 		$stmt = $conn->prepare("INSERT INTO Cert_Enrollment (UIN, Cert_ID, Status, Training_Status, Program_Num, Semester, Year) values(?, ?, ?, ?, ?, ?, ?)");
 		$stmt->bind_param("sssssss", $input_UIN, $input_Cert_ID, $input_Status, $input_Training_Status, $input_Program_Num, $input_Semester, $input_Year);
 		$execval = $stmt->execute();
-		
+		$stmt->close();
+		$conn->close();
+        $stmt = null;
+        $conn = null; 
+
         if ($execval == 1){
             echo "Inserted new certification successfully...";
+            header("Location: ../program_progress_page.php");
         }
         else{
             echo "Could not add new certificaition please double check parameters entered...";
         }
-		$stmt->close();
-		$conn->close();
 	}
 ?>
-
-<!--
-    INSERT INTO Cert_Enrollment (UIN, Cert_ID, Status, Training_Status, Program_Num, Semester,Year)
-    VALUES (120, 2, "Not Started", "Not enrolled in online course yet", 2, "Fall", "2023")
-
--->
