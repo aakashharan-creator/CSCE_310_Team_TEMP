@@ -5,7 +5,7 @@ $conn = new mysqli('sql9.freemysqlhosting.net', 'sql9658278', 'ZX2Ybn3eNA', 'sql
 
 if ($conn->connect_error) {
     echo "$conn->connect_error";
-    die("Connection Failed : " . $conn->connect_error);
+    die("Connectaion Failed : " . $conn->connect_error);
 } else {
     $query = "SELECT * FROM User JOIN College_Student CS ON User.UIN = CS.UIN WHERE User.Username = '" . $_SESSION['Username'] . "';";
     $result = mysqli_query($conn, $query);
