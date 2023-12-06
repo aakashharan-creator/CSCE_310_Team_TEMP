@@ -1,63 +1,57 @@
 
-<!--
-  INSERT INTO Class_Enrollment (UIN, Class_ID, Status, Semester, Year)
-  VALUES ("120", "310", "In progess", "Fall", "2023");
--->
 <!DOCTYPE html>
 <html>
 <head>
   <title>Insert Course</title> 
+  <script defer src="validate_insert_cert.js"></script>
 </head>
 
     <body>
 
-    <h1>Insert Course</h1>
+    <h1>Insert Certification</h1>
 
-      <form method="post" action="insert_cert_data.php">
+    <div id="error"></div>
+
+      <form id="form" method="post" action="insert_cert_data.php">
 
       <div>
           <label>UIN</label><br>
-          <input type="text" name="UIN" required>
+          <input type="text" name="UIN" id="UIN" required>
           </div>
 
           <div>
-          <label>Certification ID</label><br>
-          <input type="text" name="Cert_ID" required>
+          <label>Certification ID (1-10)</label><br>
+          <input type="text" name="Cert_ID" id="Cert_ID" required>
           </div>
           
           <div>
-          <label>Status</label><br>
-          <input type="text" name="Status" required>
+          <label>Status [Done, In Progress, Not Started (Case sensitive)]</label><br>
+          <input type="text" name="Status" id="Status" required>
           </div>
 
           <div>
-          <label>Training Status</label><br>
-          <input type="text" name="Training_Status" required>
+          <label>Training Status [Done, In Progress, Not Started (Case sensitive)]</label><br>
+          <input type="text" name="Training_Status" id="Training_Status" required>
           </div>
 
           <div>
-          <label>Program Number</label><br>
-          <input type="text" name="Program_Num" required> 
+          <label>Program Number (1-10)</label><br>
+          <input type="number" name="Program_Num" id="Program_Num" required> 
           </div>
 
           <div>
-          <label>Semester</label><br>
-          <input type="text" name="Semester" required> 
+          <label>Semester [Fall, Spring, Summer Note: Case sensitive]</label><br>
+          <input type="text" name="Semester" id="Semester" required> 
           </div>
 
           <div>
-          <label>Year</label><br>   
-          <input type="text" name="Year" required>
+          <label>Year (Format: xxxx)</label><br>   
+          <input type="number" name="Year" id="Year" required>
           </div>
 
-          <input type="submit" value="submit">
+          <button type="submit">Submit</button>
 
       </form>
 
     </body>
 </html>
-
-<!--
-    INSERT INTO Cert_Enrollment (UIN, Cert_ID, Status, Training_Status, Program_Num, Semester,Year)
-    VALUES (120, 2, "Not Started", "Not enrolled in online course yet", 2, "Fall", "2023");
--->

@@ -19,9 +19,14 @@
 		
         if ($execval == 1){
             echo "Inserted class successfully...";
-			header("Location: ../program_progress_page.php");
         }
 		$stmt->close();
 		$conn->close();
 	}
 ?>
+
+<!--
+  INSERT INTO Class_Enrollment (UIN, Class_ID, Status, Semester, Year)
+VALUES ("120", "454", "Done", "Fall", "2023");
+
+-->

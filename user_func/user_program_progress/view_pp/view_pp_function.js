@@ -1,51 +1,66 @@
 function populateUserData() {
 
-    // Get table 
-    let table = document.getElementById("user-data");
-    if(!table) {
-      console.log("Error: Table not found");
-      return;
-    }
+    // Get certification table
+    const certTable = document.getElementById("user-data");
   
-    // Fetch data
-    fetch("view_pp_data.php")
-      .then(response => {
-        if(!response.ok) {
-          throw new Error("Fetch failed");  
-        }
-        return response.json(); 
-      })
+    // Populate certification table
+    fetch("view_cert_data.php")
+      .then(response => response.json()) 
       .then(data => {
-        
-        console.log(data);
-        
-        if(!data || data.length == 0) {
-          console.log("No data returned");
-          return;
+        for(let i = 0; i < data.length; i++) {
+          let certRow = document.createElement("tr");
+  
+          for(let j = 0; j < data[i].length; j++) {
+             let cell = document.createElement("td");
+             cell.innerHTML = data[i][j];
+             
+             certRow.appendChild(cell);
+          }
+  
+          certTable.appendChild(certRow);  
         }
-  
-        let keys = ["CertE_Num", "UIN", "Cert_ID", "Status", 
-          "Training_Status", "Program_Num", "Semester", "Year"];
-  
-        keys.forEach(key => {
-  
-          let row = document.createElement("tr");
-          
-          let label = document.createElement("td");
-          label.innerText = key;
-          
-          let value = document.createElement("td"); 
-          value.innerText = data[key];
-          
-          row.appendChild(label);
-          row.appendChild(value);
-          
-          table.appendChild(row);
-        });
-  
-      })
-      .catch(error => {
-        console.log("Error: " + error);
       });
   
+    // Get classes table 
+    const classTable = document.getElementById("user-data2");
+  
+    // Populate classes table
+    fetch("view_class_data.php")
+      .then(response => response.json())
+      .then(data => {
+        for(let i = 0; i < data.length; i++) {
+          
+          let classRow = document.createElement("tr");
+  
+          for(let j = 0; j < data[i].length; j++) {
+             let cell = document.createElement("td");
+             cell.innerHTML = data[i][j];
+             
+             classRow.appendChild(cell); 
+          }
+  
+          classTable.appendChild(classRow);
+        }
+      });
+
+      // Get internships table
+  const internTable = document.getElementById("user-data3");
+
+  fetch("view_internship_data.php")
+    .then(response => response.json())
+    .then(data => {
+      for(let i = 0; i < data.length; i++) {
+
+        let row = document.createElement("tr");
+        
+        for(let j = 0; j < data[i].length; j++){
+           let cell = document.createElement("td");
+           cell.innerHTML = data[i][j];
+           
+           row.appendChild(cell);
+        }
+
+        internTable.appendChild(row);
+      }
+    });
   }

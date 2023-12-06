@@ -9,6 +9,7 @@
 
 <body>
     <a href="../index.php" style="position: absolute; top:25px; right: 25px;">Logout</a>
+    <a href="../user_home_page.php" style="position: absolute; top:50px; right: 25px;">Home Page</a>
     <h1>Program Progress Page</h1>
 
 
@@ -16,6 +17,11 @@
     <a href="./view_pp/view_pp_page.php">
             <button>View Programs</button> 
     </a>
+
+    <br>
+    <br>
+    <br>
+    
     <h3>Add new class enrollment</h3>
         <a href="./insert_pp/insert_class_page.php">
             <button>Add Course</button> 
@@ -29,7 +35,10 @@
             <button>Add Internship </button> 
         </a>
 
-    
+    <br>
+    <br>
+    <br>
+
     <h3>Edit existing class enrollment</h3>
         <a href="./edit_pp/edit_class_page.php">
             <button>Edit Class</button> 
@@ -43,6 +52,9 @@
             <button>Edit Internship </button> 
         </a>
 
+    <br>
+    <br>
+    <br>
 
     <h3>Delete existing class enrollment</h3>
         <a href="./delete_pp/delete_class_page.php">
@@ -57,6 +69,9 @@
             <button>Delete Internship </button> 
         </a>
 
+    <br>
+    <br>
+    <br>
     
 </body>
 

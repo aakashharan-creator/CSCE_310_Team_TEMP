@@ -19,6 +19,10 @@
     <a href="add_user_page.php">Add Admin</a>
     <a href="remove_user_page.php">Remove User</a>
     <a href="edit_user_page.php">Edit User Details</a>
+    <a href="../student_program_progress/program_progress_page.php">Student program progress</a>
+
+
+    <h2>All users</h2>
     <table id="user-table">
         <tr>
             <th>UIN</th>
