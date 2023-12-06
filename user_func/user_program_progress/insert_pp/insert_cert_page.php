@@ -21,32 +21,32 @@
 
           <div>
           <label>Certification ID</label><br>
-          <input type="text" name="Cert_ID" required>
+          <input type="text" name="Cert_ID" id="Cert_ID" required>
           </div>
           
           <div>
           <label>Status</label><br>
-          <input type="text" name="Status" required>
+          <input type="text" name="Status" id="Status" required>
           </div>
 
           <div>
           <label>Training Status</label><br>
-          <input type="text" name="Training_Status" required>
+          <input type="text" name="Training_Status" id="Training_Status" required>
           </div>
 
           <div>
           <label>Program Number</label><br>
-          <input type="text" name="Program_Num" required> 
+          <input type="number" name="Program_Num" id="Program_Num" required> 
           </div>
 
           <div>
-          <label>Semester</label><br>
-          <input type="text" name="Semester" required> 
+          <label>Semester [Fall, Spring, Summer Note: Case sensitive]</label><br>
+          <input type="text" name="Semester" id="Semester" required> 
           </div>
 
           <div>
           <label>Year</label><br>   
-          <input type="text" name="Year" required>
+          <input type="number" name="Year" id="Year" required>
           </div>
 
           <button type="submit">Submit</button>
