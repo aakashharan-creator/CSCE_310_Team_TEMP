@@ -74,10 +74,11 @@
             } else {
             echo "Updated year successfully!<br>";  
         }
-        
+        $stmt->close();
+	    $conn->close();
         
 	}
-    $stmt->close();
-	$conn->close();
+
+    //header("Location: ../program_progress_page.php");
     
 ?>
