@@ -13,6 +13,7 @@
 
     <a class="log-out" href="../index.php">Logout</a>
     <a href="admin_user_page/admin_user_page.php">Go to user page</a>
+    <a href="admin_event/add_event.php">Go to event page</a>
 </body>
 
 </html>
