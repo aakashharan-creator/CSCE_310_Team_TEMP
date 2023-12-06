@@ -1,4 +1,3 @@
-const uin = document.getElementById('UIN')
 const intern_ID = document.getElementById('Intern_ID')
 const status_ = document.getElementById('Status')
 const year = document.getElementById('Year')
@@ -10,14 +9,9 @@ const validStatuses = ['Done', 'In Progress', 'Not Started'];
 form.addEventListener('submit', (e) => {
   let messages = []
 
-  // check uin
-  if (uin.value.length < 3) {
-    messages.push('Incorrect uin')
-  }
-
   // check Internship_ID
-  if (intern_ID.value.length > 1) {
-    messages.push('Incorrect Cert_ID')
+  if (intern_ID.value > 10) {
+    messages.push('Incorrect Intern_ID')
   }
   
   // check status
