@@ -1,6 +1,7 @@
 <?php
     // Get input from the insert class form in insert_cert_page.php
     $input_CertE_Num = $_POST['CertE_Num'];
+    $input_UIN = $_POST['UIN'];
     $input_Cert_ID = $_POST['Cert_ID'];
     $input_Status = $_POST['Status'];
     $input_Training_Status = $_POST['Training_Status'];
@@ -14,6 +15,16 @@
 		echo "$conn->connect_error";
 		die("Connection Failed : " . $conn->connect_error);
 	} else {
+
+        // edit Cert_ID
+		$update_certID = "UPDATE Cert_Enrollment SET UIN = '" . $input_UIN . "' WHERE CertE_Num = '" . $input_CertE_Num . "';";
+		$result_certID = $conn->query($update_certID);
+
+        if (!$result_certID) {
+        echo "Could not update UIN<br>";
+        } else {
+        echo "Updated UIN successfully!<br>";  
+        }
 
         // edit Cert_ID
 		$update_certID = "UPDATE Cert_Enrollment SET Cert_ID = '" . $input_Cert_ID . "' WHERE CertE_Num = '" . $input_CertE_Num . "';";
@@ -74,11 +85,7 @@
             } else {
             echo "Updated year successfully!<br>";  
         }
-        $stmt->close();
-	    $conn->close();
+        
         
 	}
-
-    //header("Location: ../program_progress_page.php");
-    
 ?>

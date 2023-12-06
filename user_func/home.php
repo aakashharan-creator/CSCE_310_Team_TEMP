@@ -10,9 +10,9 @@
 <body>
     <a href="../index.php" style="position: absolute; top:25px; right: 25px;">Logout</a>
     <h1>User Home Page</h1>
-    <h3>View Information</h3>
+    <h3>View Profile Information</h3>
         <a href="./user_profile_page/view_profile_info.php">
-            <button>View Information</button> 
+            <button>View</button> 
         </a>
     <h3>Feature 2</h3>
         <a href="feature2.php">
