@@ -82,7 +82,7 @@
 
     <h3>Delete a students certificate progress</h3>
     <a href="./delete_pp/delete_cert_page.php">
-            <button>Edit certificate progress</button> 
+            <button>Delete certificate progress</button> 
     </a>
 
     <h3>Delete a students class progress</h3>
@@ -92,7 +92,7 @@
 
     <h3>Delete a students internship progress</h3>
     <a href="./delete_pp/delete_internship_page.php">
-            <button>Edit internship progress</button> 
+            <button>Delete internship progress</button> 
     </a>
 
     

@@ -37,9 +37,9 @@
         <a href="admin_user_page/admin_user_page.php">
             <button>User Page</button> 
         </a>
-    <h3>Feature 3</h3>
-        <a href="feature3.php">
-            <button>Feature 3</button> 
+    <h3>Student Program Progress</h3>
+        <a href="student_program_progress/program_progress_page.php">
+            <button>Program Progress</button> 
         </a>
     <h3>Event Page</h3>
         <a href="admin_event/view_events.php">
