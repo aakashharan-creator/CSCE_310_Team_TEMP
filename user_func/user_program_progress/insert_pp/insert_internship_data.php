@@ -23,6 +23,7 @@
 		
         if ($execval == 1){
             echo "Inserted internship successfully...";
+            header("Location: ../program_progress_page.php");
         }
         else{
             echo "Could not insert internship there was an error...";
