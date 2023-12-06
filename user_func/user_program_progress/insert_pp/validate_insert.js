@@ -1,31 +1,16 @@
-// Get reference to form
-const form = document.getElementById("certForm");
-const error = document.getElementById("error");
+const uin = document.getElementById('UIN')
+const form = document.getElementById('form')
+const errorElement = document.getElementById('error')
 
-function isValidUin(uin) {
-
-    if(uin.length < 3) {
-      return false;
-    }
-  
-    return true;
-  
+form.addEventListener('submit', (e) => {
+  let messages = []
+  if (uin.value.length < 3 || uin.value == null) {
+    messages.push('Incorrect uin')
   }
   
-form.addEventListener("submit", (e) => {
-
-    const uinInput = document.querySelector("input[name='UIN']");
-  
-    const uinValue = uinInput.value;  
-
-    if(!isValidUin(uinValue)) {     
-        // use uinValue variable  
-        e.preventDefault();     
-        error.textContent = "Invalid UIN";
-
-  } 
-  else {
-    error.textContent = ""; 
+  if (messages.length > 0) {
+    e.preventDefault()
+    errorElement.innerText = messages.join(', ')
   }
   
-  });
+})

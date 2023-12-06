@@ -1,23 +1,22 @@
 
-<!--
-  INSERT INTO Class_Enrollment (UIN, Class_ID, Status, Semester, Year)
-  VALUES ("120", "310", "In progess", "Fall", "2023");
--->
 <!DOCTYPE html>
 <html>
 <head>
   <title>Insert Course</title> 
+  <script defer src="validate_insert.js"></script>
 </head>
 
     <body>
 
-    <h1>Insert Course</h1>
+    <h1>Insert Certification</h1>
 
-      <form method="post" action="insert_cert_data.php">
+    <div id="error"></div>
+
+      <form id="form" method="post" action="insert_cert_data.php">
 
       <div>
           <label>UIN</label><br>
-          <input type="text" name="UIN" required>
+          <input type="text" name="UIN" id="UIN" required>
           </div>
 
           <div>
@@ -50,14 +49,9 @@
           <input type="text" name="Year" required>
           </div>
 
-          <input type="submit" value="submit">
+          <button type="submit">Submit</button>
 
       </form>
 
     </body>
 </html>
-
-<!--
-    INSERT INTO Cert_Enrollment (UIN, Cert_ID, Status, Training_Status, Program_Num, Semester,Year)
-    VALUES (120, 2, "Not Started", "Not enrolled in online course yet", 2, "Fall", "2023");
--->
