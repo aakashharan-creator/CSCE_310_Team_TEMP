@@ -25,7 +25,5 @@
             echo "Deleted certificate successfully!<br>"; 
             header("Location: ../program_progress_page.php");
         }
-        
-        
 	}
 ?>
