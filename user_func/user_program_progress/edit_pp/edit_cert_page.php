@@ -20,8 +20,8 @@ Year
 
       <div>
       <div>
-          <label>CertE_ID</label><br>
-          <input type="text" name="Cert_ID" required>
+          <label>CertE_Num</label><br>
+          <input type="text" name="CertE_Num" required>
           </div>
 
           <div>
@@ -54,7 +54,7 @@ Year
           <input type="text" name="Year" required> 
           </div>
 
-          <input type="submit" value="submit">
+          <button type="submit">Submit</button>
 
       </form>
     </body>
