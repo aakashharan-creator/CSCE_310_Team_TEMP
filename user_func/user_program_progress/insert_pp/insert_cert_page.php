@@ -20,22 +20,22 @@
           </div>
 
           <div>
-          <label>Certification ID</label><br>
+          <label>Certification ID (1-10)</label><br>
           <input type="text" name="Cert_ID" id="Cert_ID" required>
           </div>
           
           <div>
-          <label>Status</label><br>
+          <label>Status [Done, In Progress, Not Started (Case sensitive)]</label><br>
           <input type="text" name="Status" id="Status" required>
           </div>
 
           <div>
-          <label>Training Status</label><br>
+          <label>Training Status [Done, In Progress, Not Started (Case sensitive)]</label><br>
           <input type="text" name="Training_Status" id="Training_Status" required>
           </div>
 
           <div>
-          <label>Program Number</label><br>
+          <label>Program Number (1-10)</label><br>
           <input type="number" name="Program_Num" id="Program_Num" required> 
           </div>
 
@@ -45,7 +45,7 @@
           </div>
 
           <div>
-          <label>Year</label><br>   
+          <label>Year (Format: xxxx)</label><br>   
           <input type="number" name="Year" id="Year" required>
           </div>
 
