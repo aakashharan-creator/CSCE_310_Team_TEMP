@@ -20,9 +20,10 @@
         echo $update_certID;
 
         if (!$result_certID) {
-        echo "Could not delete certificate<br>";
+            echo "Could not delete certificate<br>";
         } else {
-        echo "Deleted certificate successfully!<br>";  
+            echo "Deleted certificate successfully!<br>"; 
+            header("Location: ../program_progress_page.php");
         }
         
         

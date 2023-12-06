@@ -19,9 +19,10 @@
 		$result_internship = $conn->query($delete_internship);
 
         if (!$result_internship) {
-        echo "Could not delete internship<br>";
+            echo "Could not delete internship<br>";
         } else {
-        echo "Deleted internship successfully!<br>";  
+            echo "Deleted internship successfully!<br>"; 
+            header("Location: ../program_progress_page.php");
         }
         
         

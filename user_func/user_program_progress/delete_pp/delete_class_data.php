@@ -20,9 +20,10 @@
         echo $delete_class;
 
         if (!$result_class) {
-        echo "Could not delete class<br>";
+            echo "Could not delete class<br>";
         } else {
-        echo "Deleted class successfully!<br>";  
+            echo "Deleted class successfully!<br>";
+            header("Location: ../program_progress_page.php");
         }
         
         
