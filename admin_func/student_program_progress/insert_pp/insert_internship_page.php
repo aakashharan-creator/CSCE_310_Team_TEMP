@@ -13,7 +13,8 @@
 
     <h1>Insert Internship</h1>
 
-      <form method="post" action="insert_internship_data.php">
+      <div id="error"></div>
+      <form id="form" form method="post" action="insert_internship_data.php">
 
       <div>
           <label>UIN</label><br>
