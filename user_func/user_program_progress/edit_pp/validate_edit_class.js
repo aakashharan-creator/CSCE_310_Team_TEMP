@@ -1,4 +1,3 @@
-const uin = document.getElementById('UIN')
 const class_ID = document.getElementById('Class_ID')
 const status_ = document.getElementById('Status')
 const semester = document.getElementById('Semester')
@@ -12,11 +11,6 @@ const validSemester = ['Fall', 'Spring', 'Summer'];
 
 form.addEventListener('submit', (e) => {
   let messages = []
-
-  // check uin
-  if (uin.value.length < 3) {
-    messages.push('Incorrect uin')
-  }
 
   // check class_ID
   if (class_ID.value.length != 3) {
