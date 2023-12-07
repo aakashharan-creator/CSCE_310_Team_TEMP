@@ -1,3 +1,4 @@
+const uin = document.getElementById('UIN')
 const class_ID = document.getElementById('Class_ID')
 const status_ = document.getElementById('Status')
 const semester = document.getElementById('Semester')
@@ -11,6 +12,11 @@ const validSemester = ['Fall', 'Spring', 'Summer'];
 
 form.addEventListener('submit', (e) => {
   let messages = []
+
+  // UIN
+  if (uin.value.length < 3) {
+    messages.push('Incorrect UIN must be at least 3 characters')
+  }
 
   // check class_ID
   if (class_ID.value.length != 3) {
@@ -32,7 +38,7 @@ form.addEventListener('submit', (e) => {
     messages.push('Incorrect year use format XXXX')
   }
   
-  // prevent defaut submit and print error messages
+  // prevent default submit and print error messages
   if (messages.length > 0) {
     e.preventDefault()
     errorElement.innerText = messages.join('\n')
