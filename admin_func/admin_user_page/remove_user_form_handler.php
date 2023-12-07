@@ -27,27 +27,31 @@ $result = $conn->query($get_user);
 $row = $result->fetch_assoc();
 
 if ($row) {
-    $result = $conn->query($get_app_num);
-    $row = $result->fetch_assoc();
-    $app_num = $row["App_Num"];
+    if ($row["User_Type"] == "admin") {
+        $conn->query($delete_user);
+    } else {
+        $result = $conn->query($get_app_num);
+        $row = $result->fetch_assoc();
+        $app_num = $row["App_Num"];
 
-    $delete_documents = "DELETE FROM Documentation WHERE App_Num = " . $app_num . ";";
-    $update_event = "UPDATE Event SET UIN = '0' WHERE UIN = '" . $uin . "';";
+        $delete_documents = "DELETE FROM Documentation WHERE App_Num = " . $app_num . ";";
+        $update_event = "UPDATE Event SET UIN = '0' WHERE UIN = '" . $uin . "';";
 
-    $conn->query($delete_intern_app);
-    $conn->query($delete_cert_enrollment);
-    $conn->query($delete_class_enrollment);
+        $conn->query($delete_intern_app);
+        $conn->query($delete_cert_enrollment);
+        $conn->query($delete_class_enrollment);
 
-    $conn->query($delete_track);
-    $conn->query($delete_application);
-    $conn->query($delete_event_tracking);
-    $conn->query($update_event);
+        $conn->query($delete_track);
+        $conn->query($delete_application);
+        $conn->query($delete_event_tracking);
+        $conn->query($update_event);
 
-    $conn->query($delete_user);
-    $conn->query($delete_college_student);
-    $conn->query($delete_documents);
+        $conn->query($delete_user);
+        $conn->query($delete_college_student);
+        $conn->query($delete_documents);
 
-    echo "Successfully deleted all traces of user from database.";
+        echo "Successfully deleted all traces of user from database.";
+    }
 } else {
     echo "No user with that UIN exists.";
 }
