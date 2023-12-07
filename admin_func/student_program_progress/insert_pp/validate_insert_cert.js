@@ -23,11 +23,12 @@ form.addEventListener('submit', (e) => {
     messages.push('Incorrect Cert_ID')
   }
   
-  
+  // check status
   if (!validStatuses.includes(status_.value)) {
     messages.push('Status must be "Done", "In Progress" or "Not Started"')
   }
 
+  // check training status
   if (!validStatuses.includes(training_status.value)) {
     messages.push('Status must be "Done", "In Progress" or "Not Started"')
   }
@@ -41,7 +42,7 @@ form.addEventListener('submit', (e) => {
     messages.push('Semester must be "Fall", "Spring" or "Summer"')
   }
   
-  // check cert_ID
+  // check year
   if (year.value.length > 4 || year.value.length < 4) {
     messages.push('Incorrect year use format XXXX')
   }

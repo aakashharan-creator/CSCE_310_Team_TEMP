@@ -17,16 +17,16 @@
 		$stmt->bind_param("sssss", $input_UIN, $input_Class_ID, $input_Status, $input_Semester, $input_Year);
 		$execval = $stmt->execute();
 		
-        if ($execval == 1){
-            echo "Inserted class successfully...";
-        }
 		$stmt->close();
 		$conn->close();
+		
+        if ($execval == 1){
+            echo "Inserted class successfully...";
+			header("Location: ../program_progress_page.php");
+        }
+		else{
+			echo "Error inserting class...";
+		}
+		
 	}
 ?>
-
-<!--
-  INSERT INTO Class_Enrollment (UIN, Class_ID, Status, Semester, Year)
-VALUES ("120", "454", "Done", "Fall", "2023");
-
--->

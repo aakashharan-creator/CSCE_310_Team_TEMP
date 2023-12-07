@@ -6,41 +6,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Insert Class</title> 
+  <title>Insert Class</title>
+  <script defer src="validate_insert_class.js"></script>
 </head>
 
     <body>
 
     <h1>Insert Class</h1>
 
-      <form method="post" action="insert_class_data.php">
+      <div id="error"></div>
+      <form id="form" form method="post" action="insert_class_data.php">
 
-      <div>
-          <label>UIN</label><br>
-          <input type="text" name="UIN" required>
+          <div>
+          <label>UIN (3 or more characters)</label><br>
+          <input type="text" name="UIN" id="UIN" required>
           </div>
 
           <div>
-          <label>Class_ID</label><br>
-          <input type="text" name="Class_ID" required>
+          <label>Class_ID (Must be exactly 3 charcaters EX: 310)</label><br>
+          <input type="text" name="Class_ID" id="Class_ID" required>
           </div>
           
           <div>
-          <label>Status</label><br>
-          <input type="text" name="Status" required>
+          <label>Status [Done, In Progress, Not Started (Case sensitive)]</label><br>
+          <input type="text" name="Status" id="Status" required>
           </div>
 
           <div>
-          <label>Semester</label><br>
-          <input type="text" name="Semester" required> 
+          <label>Semester [Fall, Spring, Summer Note: Case sensitive]</label><br>
+          <input type="text" name="Semester" id="Semester" required> 
           </div>
 
           <div>
-          <label>Year</label><br>   
-          <input type="text" name="Year" required>
+          <label>Year (Format: xxxx)</label><br>   
+          <input type="text" name="Year" id="Year" required>
           </div>
 
-          <input type="submit" value="submit">
+          <button type="Submit">Submit</button>
 
       </form>
 
