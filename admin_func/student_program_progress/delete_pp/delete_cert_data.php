@@ -1,8 +1,3 @@
-<!--
-   DELETE FROM Cert_Enrollment
-    WHERE CertE_Num = 4;
--->
-
 <?php
     // Get input from the insert class form in insert_cert_page.php
     $input_CertE_Num = $_POST['CertE_Num'];
@@ -14,15 +9,19 @@
 		die("Connection Failed : " . $conn->connect_error);
 	} else {
 
-        // delete certification record
-		$delete_cert = "DELETE FROM Cert_Enrollment WHERE CertE_Num = '" . $input_CertE_Num . "';";
-		$result_certID = $conn->query($delete_cert);
-        echo $update_certID;
-
-        if (!$result_certID) {
-        echo "Could not delete certificate<br>";
-        } else {
-        echo "Deleted certificate successfully!<br>";  
+        $check_query = "SELECT * FROM Cert_Enrollment WHERE CertE_Num = '" . $input_CertE_Num . "';";
+        $check_result = $conn->query($check_query);
+        if ($check_result->num_rows >= 1) {
+            // if record exists delete certification record
+            $delete_cert = "DELETE FROM Cert_Enrollment WHERE CertE_Num = '" . $input_CertE_Num . "';";
+            $result_certID = $conn->query($delete_cert);
+            echo "Deleted certificate successfully!<br>";
+            echo "<a href='../program_progress_page.php'>Go back to program progress page</a>";
+        }
+        else {
+            echo "That certification does not exist could not delete<br>";
+            echo "<a href='../program_progress_page.php'>Go back to program progress page</a>";
         }
 	}
 ?>
+

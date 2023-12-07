@@ -17,19 +17,24 @@
 		echo "$conn->connect_error";
 		die("Connection Failed : " . $conn->connect_error);
 	} else {
-		$stmt = $conn->prepare("INSERT INTO Intern_App (UIN, Intern_ID, Status, Year) values(?, ?, ?, ?)");
-		$stmt->bind_param("ssss", $input_UIN, $input_Intern_ID, $input_Status, $input_Year);
-		$execval = $stmt->execute();
-		
-        $stmt->close();
-		$conn->close();
 
-        if ($execval == 1){
-            echo "Inserted internship successfully...";
-            header("Location: ../program_progress_page.php");
+        $check_query = "SELECT * FROM College_Student WHERE UIN = '" . $input_UIN . "';";
+        $check_result = $conn->query($check_query);
+        if ($check_result->num_rows >= 1) {
+            $stmt = $conn->prepare("INSERT INTO Intern_App (UIN, Intern_ID, Status, Year) values(?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $input_UIN, $input_Intern_ID, $input_Status, $input_Year);
+            $execval = $stmt->execute();
+            $stmt->close();
+            $conn->close();
+            echo "Inserted new internship successfully<br>";
+            echo "<a href='../program_progress_page.php'>Go back to program progress page</a>";
         }
-        else{
-            echo "Could not insert internship there was an error...";
+        else {
+            echo "That college student does not exist could not insert internship<br>";
+            echo "<a href='../program_progress_page.php'>Go back to program progress page</a>";
         }
+
+		
+       
 	}
 ?>

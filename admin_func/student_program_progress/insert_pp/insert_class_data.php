@@ -13,20 +13,23 @@
 		echo "$conn->connect_error";
 		die("Connection Failed : " . $conn->connect_error);
 	} else {
-		$stmt = $conn->prepare("INSERT INTO Class_Enrollment (UIN, Class_ID, Status, Semester, Year) values(?, ?, ?, ?, ?)");
-		$stmt->bind_param("sssss", $input_UIN, $input_Class_ID, $input_Status, $input_Semester, $input_Year);
-		$execval = $stmt->execute();
-		
-		$stmt->close();
-		$conn->close();
-		
-        if ($execval == 1){
-            echo "Inserted class successfully...";
-			header("Location: ../program_progress_page.php");
-        }
-		else{
-			echo "Error inserting class...";
+
+		$check_query = "SELECT * FROM College_Student WHERE UIN = '" . $input_UIN . "';";
+        $check_result = $conn->query($check_query);
+        if ($check_result->num_rows >= 1) {
+			$stmt = $conn->prepare("INSERT INTO Class_Enrollment (UIN, Class_ID, Status, Semester, Year) values(?, ?, ?, ?, ?)");
+			$stmt->bind_param("sssss", $input_UIN, $input_Class_ID, $input_Status, $input_Semester, $input_Year);
+			$execval = $stmt->execute();
+			
+			$stmt->close();
+			$conn->close();
+			echo "Inserted new certification successfully<br>";
+            echo "<a href='../program_progress_page.php'>Go back to program progress page</a>";
 		}
-		
+		else{
+			echo "That college student does not exist could not insert class<br>";
+            echo "<a href='../program_progress_page.php'>Go back to program progress page</a>";
+
+		}
 	}
 ?>

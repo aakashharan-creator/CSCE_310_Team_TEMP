@@ -9,11 +9,21 @@ $conn = new mysqli('sql9.freemysqlhosting.net', 'sql9658278', 'ZX2Ybn3eNA', 'sql
 // Get UIN from session
 $uin = $_SESSION['ViewUIN'];
 
-// Define query 
-$sql = "SELECT * FROM Class_Enrollment WHERE UIN = '$uin'";
+$check_query = "SELECT * FROM College_Student WHERE UIN = '" . $uin . "';";
+  $check_result = $conn->query($check_query);
+  if ($check_result->num_rows >= 1) {
+    // Define query 
+    $sql = "SELECT * FROM Class_Enrollment WHERE UIN = '$uin'";
 
-// Execute query and get result 
-$result = mysqli_query($conn, $sql);
+    // Execute query and get result 
+    $result = mysqli_query($conn, $sql);
+    
+}
+else {
+    echo "That student does not exist could not view certifications<br>";
+    echo "<a href='../program_progress_page.php'>Go back to program progress page</a>";
+}
+
 
 ?>
 
@@ -67,5 +77,5 @@ $result = mysqli_query($conn, $sql);
 
 // Close database connection
 mysqli_close($conn);
-
+echo "<a href='../program_progress_page.php'>Go back to program progress page</a>";
 ?>
