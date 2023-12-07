@@ -24,7 +24,5 @@
         } else {
         echo "Deleted certificate successfully!<br>";  
         }
-        
-        
 	}
 ?>

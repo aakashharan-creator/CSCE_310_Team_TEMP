@@ -11,7 +11,7 @@
       <div>
           <div>
           <label>CE_Num</label><br>
-          <input type="text" name="CE_Num" required>
+          <input type="number" name="CE_Num" required>
       </div>
 
       <input type="submit" value="submit">

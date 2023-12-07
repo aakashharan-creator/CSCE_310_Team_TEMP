@@ -6,6 +6,8 @@
     <body>
     <h1> Edit existing Internship </h1>
       <p> Make sure to put the right IA_Num to edit the correct record </p>
+      
+      <div id="error"></div>
       <form method="post" action="edit_internship_data.php">
 
       <div>
@@ -32,7 +34,7 @@
           <input type="text" name="Year" required> 
           </div>
           
-          <input type="submit" value="submit">
+          <button type="submit">Submit</button>
 
       </form>
     </body>

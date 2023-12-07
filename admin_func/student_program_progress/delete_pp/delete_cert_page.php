@@ -11,7 +11,7 @@
       <div>
           <div>
           <label>CertE_Num</label><br>
-          <input type="text" name="CertE_Num" required>
+          <input type="number" name="CertE_Num" required>
       </div>
 
       <input type="submit" value="submit">
