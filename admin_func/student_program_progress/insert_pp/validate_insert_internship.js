@@ -2,7 +2,6 @@ const uin = document.getElementById('UIN')
 const intern_ID = document.getElementById('Intern_ID')
 const status_ = document.getElementById('Status')
 const year = document.getElementById('Year')
-
 const form = document.getElementById('form')
 const errorElement = document.getElementById('error')
 const validStatuses = ['Done', 'In Progress', 'Not Started'];
