@@ -7,6 +7,7 @@ if ($conn->connect_error) {
     echo "$conn->connect_error";
     die("Connection Failed : " . $conn->connect_error);
 } else {
+    // fetch information to retrieve the current user's UIN
     $quer = "SELECT * FROM User WHERE Username = '" . $_SESSION['Username'] . "';";
     $res = mysqli_query($conn, $quer);
 
@@ -19,6 +20,7 @@ if ($conn->connect_error) {
     // Initialize $doc_data as an empty array
     $doc_data = array();
     
+    // retrieve all rows where the application number matches any found under the user's UIN
     while($row = $result->fetch_assoc()) {
         $app_num = $row["App_Num"];
 

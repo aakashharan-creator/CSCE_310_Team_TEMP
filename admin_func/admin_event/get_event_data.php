@@ -6,6 +6,7 @@ if ($conn->connect_error) {
     echo "$conn->connect_error";
     die("Connection Failed : " . $conn->connect_error);
 } else {
+    // fetch all information from the event table
     $result = mysqli_query($conn, "SELECT * FROM Event");
     $rows = array();
     while ($row = $result->fetch_array()) {
