@@ -17,11 +17,12 @@ $input_End_Date = $_POST['End_Date'];
 $input_End_Time = $_POST['End_Time'];
 $input_Event_Type = $_POST['Event_Type'];
 
-
+// verify that the event type chosen is valid
 if ($input_Event_Type != "Conference" && $input_Event_Type != "Workshop" && $input_Event_Type != "CTF" && $input_Event_Type != "Hackathon") {
     echo "<h2>Error: Invalid event type. Please select \"Conference\", \"Workshop\", \"CTF\", or \"Hackathon\".</h2>";
     echo "<a href='add_event.php'>Go back</a>";
 } else {
+    // verify that the program number chosen is valid
     $query_uin = "SELECT * FROM Programs WHERE Program_Num = '" . $input_Program_Num . "';";
     $result = $conn->query($query_uin);
 
@@ -29,12 +30,14 @@ if ($input_Event_Type != "Conference" && $input_Event_Type != "Workshop" && $inp
         echo "<h2>Error: Invalid program number. Please verify that your program exists.</h2>";
         echo "<a href='add_event.php'>Go back</a>";
     } else {
+        // retrieve the current admin's UIN to use for the event
         $quer = "SELECT * FROM User WHERE Username = '" . $_SESSION['Username'] . "';";
         $res = mysqli_query($conn, $quer);
 
         $newrow = $res->fetch_assoc();
         $input_UIN = $newrow["UIN"];
 
+        // query the database to add the new event
         $query = "INSERT INTO Event (UIN, Program_Num, Start_Date, Start_Time, Location, End_Date, End_Time, Event_Type)
                     VALUES " . "('" . $input_UIN . "', '" . $input_Program_Num . "', '" 
                     . $input_Start_Date . "', '" . $input_Start_Time . "', '" . $input_Location . "', '" . $input_End_Date 

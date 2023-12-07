@@ -8,6 +8,7 @@
 		echo "$conn->connect_error";
 		die("Connection Failed: " . $conn->connect_error);
 	} else {
+        // update the link to the document selected. This is the only value that would make sense to change as opposed to delete
 		$query1 = "UPDATE Documentation SET Link = '" . $input_Link . "' WHERE Doc_Num = '" . $input_Doc_Num . "';";
 		$result1 = $conn->query($query1);
 

@@ -7,6 +7,7 @@
 		echo "$conn->connect_error";
 		die("Connection Failed: " . $conn->connect_error);
 	} else {
+        // query the database to delete the selected event
 		$query = "DELETE FROM Event WHERE Event_ID = '" . $input_Event_ID . "';";
 		$result = $conn->query($query);
 

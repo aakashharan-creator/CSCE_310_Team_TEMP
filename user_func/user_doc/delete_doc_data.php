@@ -7,6 +7,7 @@
 		echo "$conn->connect_error";
 		die("Connection Failed: " . $conn->connect_error);
 	} else {
+        // delete the selected document
 		$query = "DELETE FROM Documentation WHERE Doc_Num = '" . $input_Doc_Num . "';";
 		$result = $conn->query($query);
 

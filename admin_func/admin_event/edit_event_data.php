@@ -6,6 +6,7 @@
     $input_End_Date = $_POST['End_Date'];
     $input_End_Time = $_POST['End_Time'];
 
+    // variable used to skip fields that were not changed
     $skip = false;
 
 	// Database connection
