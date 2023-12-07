@@ -15,20 +15,21 @@ if ($conn->connect_error) {
 
     $query = "SELECT * FROM Application WHERE UIN = '" . $newuin . "';";
     $result = mysqli_query($conn, $query);
-    
-    $row = $result->fetch_assoc();
-    $app_num = $row["App_Num"];
-
-    $query2 = "SELECT * FROM Documentation WHERE App_Num = '" . $app_num . "';";
-    $result2 = mysqli_query($conn, $query2);
 
     // Initialize $doc_data as an empty array
     $doc_data = array();
+    
+    while($row = $result->fetch_assoc()) {
+        $app_num = $row["App_Num"];
 
-    while ($row2 = $result2->fetch_array()) {
-        // Append each row to $doc_data
-        $value = array($row2["Doc_Num"], $row2["App_Num"], $row2["Link"], $row2["Doc_Type"]);
-        array_push($doc_data, $value);
+        $query2 = "SELECT * FROM Documentation WHERE App_Num = '" . $app_num . "';";
+        $result2 = mysqli_query($conn, $query2);
+
+        while ($row2 = $result2->fetch_array()) {
+            // Append each row to $doc_data
+            $value = array($row2["Doc_Num"], $row2["App_Num"], $row2["Link"], $row2["Doc_Type"]);
+            array_push($doc_data, $value);
+        }
     }
 }
 
