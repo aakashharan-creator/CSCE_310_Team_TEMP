@@ -6,7 +6,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Insert Internship</title> 
+  <title>Insert Internship</title>
+  <script defer src="validate_insert_internship.js"></script>
 </head>
 
     <body>
@@ -17,22 +18,22 @@
       <form id="form" form method="post" action="insert_internship_data.php">
 
       <div>
-          <label>UIN</label><br>
+          <label>UIN (3 or more characters)</label><br>
           <input type="text" name="UIN" id="UIN" required>
           </div>
 
           <div>
-          <label>Internship ID</label><br>
-          <input type="text" name="Intern_ID" id="Intern_ID" required>
+          <label>Internship ID (1-10)</label><br>
+          <input type="number" name="Intern_ID" id="Intern_ID" required>
           </div>
           
           <div>
-          <label>Status</label><br>
+          <label>Status [Done, In Progress, Not Started (Case sensitive)]</label><br>
           <input type="text" name="Status" id="Status" required>
           </div>
 
           <div>
-          <label>Year</label><br>   
+          <label>Year (Format: xxxx) </label><br>   
           <input type="text" name="Year" id="Year" required>
           </div>
 

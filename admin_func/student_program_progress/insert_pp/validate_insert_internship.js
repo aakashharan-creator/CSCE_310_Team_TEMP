@@ -16,7 +16,7 @@ form.addEventListener('submit', (e) => {
   }
 
   // check Internship_ID
-  if (intern_ID.value.length > 1) {
+  if (intern_ID.value > 10) {
     messages.push('Incorrect Cert_ID')
   }
   

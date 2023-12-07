@@ -21,13 +21,15 @@
 		$stmt->bind_param("ssss", $input_UIN, $input_Intern_ID, $input_Status, $input_Year);
 		$execval = $stmt->execute();
 		
+        $stmt->close();
+		$conn->close();
+
         if ($execval == 1){
             echo "Inserted internship successfully...";
+            header("Location: ../program_progress_page.php");
         }
         else{
             echo "Could not insert internship there was an error...";
         }
-		$stmt->close();
-		$conn->close();
 	}
 ?>
