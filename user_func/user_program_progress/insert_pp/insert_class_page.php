@@ -13,27 +13,23 @@
       <form id="form" form method="post" action="insert_class_data.php">
 
       <div>
-          <label>UIN</label><br>
-          <input type="text" name="UIN" id="UIN" required>
-          </div>
-
           <div>
-          <label>Class_ID</label><br>
+          <label>Class_ID (3 Digits Ex: 310)</label><br>
           <input type="text" name="Class_ID" id="Class_ID" required>
           </div>
           
           <div>
-          <label>Status</label><br>
+          <label>Status [Done, In Progress, Not Started (Case sensitive)]</label><br>
           <input type="text" name="Status" id="Status" required>
           </div>
 
           <div>
-          <label>Semester</label><br>
+          <label>Semester [Fall, Spring, Summer (Case sensitive)]</label><br>
           <input type="text" name="Semester" id="Semester" required> 
           </div>
 
           <div>
-          <label>Year</label><br>   
+          <label>Year (Format: xxxx)</label><br>   
           <input type="text" name="Year" id="Year" required>
           </div>
 

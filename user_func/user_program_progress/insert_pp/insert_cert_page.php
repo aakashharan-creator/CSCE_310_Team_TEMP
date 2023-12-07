@@ -15,9 +15,6 @@
       <form id="form" method="post" action="insert_cert_data.php">
 
       <div>
-          <label>UIN</label><br>
-          <input type="text" name="UIN" id="UIN" required>
-          </div>
 
           <div>
           <label>Certification ID (1-10)</label><br>

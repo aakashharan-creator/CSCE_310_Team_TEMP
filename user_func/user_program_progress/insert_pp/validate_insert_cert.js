@@ -1,4 +1,3 @@
-const uin = document.getElementById('UIN')
 const cert_ID = document.getElementById('Cert_ID')
 const status_ = document.getElementById('Status')
 const training_status = document.getElementById('Training_Status')
@@ -12,11 +11,6 @@ const validSemester = ['Fall', 'Spring', 'Summer'];
 
 form.addEventListener('submit', (e) => {
   let messages = []
-
-  // check uin
-  if (uin.value.length < 3) {
-    messages.push('Incorrect uin')
-  }
 
   // check cert_ID
   if (cert_ID.value.length > 1) {
