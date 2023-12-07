@@ -86,6 +86,5 @@
             echo "Updated year successfully!<br>";  
         }
         
-        
 	}
 ?>
