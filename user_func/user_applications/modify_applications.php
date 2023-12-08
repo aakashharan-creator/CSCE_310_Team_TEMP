@@ -13,6 +13,7 @@ $sql = "SELECT (UIN) FROM User WHERE Username='$name'";
 
 $result_user = $conn->query($sql);
 $result_user = $result_user -> fetch_assoc();
+$curr_uin = $result_user["UIN"];
 
 
 
@@ -36,11 +37,15 @@ if(isset($_GET["id"])){
 
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $id = $_POST["id"];
 
-    echo $id;
-    $uin = $_POST["uin"];
-    $program_id = $_POST["program_num"];
+    if(isset($_POST["id"])){  
+
+        $id = $_POST["id"];
+    }
+
+    // echo $id;
+    $uin = $curr_uin;
+    $program_id = $_POST["program_id"];
     $ucert = $_POST["ucert"];
     $ccert = $_POST["ccert"];
     $purpose = $_POST["purpose"];
