@@ -6,7 +6,7 @@
 </head>
 
 <body>
-
+  <a href="../index.php" style="position: absolute; top: 25px; right: 25px;">Go back</a>
   <h1>Register</h1>
 
   <form method="post" action="register_handler.php">

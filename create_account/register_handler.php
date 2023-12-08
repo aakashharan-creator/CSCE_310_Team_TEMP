@@ -34,8 +34,14 @@ $gpa = $_POST['gpa'];
 
 if (strlen($UIN) != 9  || !is_numeric($UIN)) {
 	echo "Invalid value for UIN";
-} else if (strlen($phone) != 9) {
+	echo "<a href='./register.php' style='position: absolute; top: 25px; right: 25px'>Go back</a>";
+} else if (strlen($phone) != 10) {
 	echo "Invalid value for Phone";
+	echo "<a href='./register.php' style='position: absolute; top: 25px; right: 25px'>Go back</a>";
+}
+else if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
+	echo "Invalid value for Email";
+	echo "<a href='./register.php' style='position: absolute; top: 25px; right: 25px'>Go back</a>";
 } else {
 
 	// query probably wrong order
@@ -45,6 +51,7 @@ if (strlen($UIN) != 9  || !is_numeric($UIN)) {
 	$user_result = $conn->query($check_if_exists_in_user);
 	if ($user_result->num_rows >= 1) {
 		echo "Account with that UIN, Username, Email, or Discord already exists.";
+		echo "<a href='./register.php' style='position: absolute; top: 25px; right: 25px'>Go back</a>";
 	} else {
 		$college_student_result = $conn->query($check_if_exists_in_user);
 		if ($college_student_result->num_rows == 1)

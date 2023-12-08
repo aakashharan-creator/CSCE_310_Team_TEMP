@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    <a href="./view_profile_info.php" style="position: absolute; top: 25px; right: 25px;">Go back</a>
   <h1>Update</h1>
   <form method="post" action="update_handler.php">
     <div>
