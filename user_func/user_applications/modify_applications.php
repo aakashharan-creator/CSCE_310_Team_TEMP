@@ -8,6 +8,14 @@ if ($conn->connect_error) {
     die("Connection Failed : " . $conn->connect_error);
 }
 
+// $name = $_SESSION["Username"];
+$sql = "SELECT (UIN) FROM User WHERE Username='svettsy'";
+
+$result_user = $conn->query($sql);
+$result_user = $result_user -> fetch_assoc();
+
+
+
 $isUpdate = isset($_GET["id"]) || isset($_POST["id"]);
 
 if(isset($_GET["id"])){
@@ -124,14 +132,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(isset($id)){
                     $disabled = "disabled";
                 }
+
+                $type_form = "insertProgram";
+                if(isset($_GET["id"])){
+                    $type_form = "updateForm";
+                }
             ?>
+
+
+            <input type="hidden" name="<?php echo $type_form;?>" />
+
 
             <h2>Application ID</h2>
             <input name="id" value="<?php if(isset($id)){ echo $id; } ?>"  disabled/>
             <br>
 
             <h2>UIN:</h2>
-            <input name="uin" value="<?php if(isset($_SESSION["UIN"])){ echo $_SESSION["UIN"]; } ?>" disabled/>
+            <input name="uin" value="<?php if(isset($result_user["UIN"])){ echo $result_user["UIN"]; } ?>" disabled/>
 
             <hr>
                 
