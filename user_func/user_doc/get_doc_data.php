@@ -7,6 +7,10 @@ if ($conn->connect_error) {
     echo "$conn->connect_error";
     die("Connection Failed : " . $conn->connect_error);
 } else {
+    // create indexes for the documentation queries
+    $indexquery = "CREATE INDEX Doc_Num_App_Num_Index ON Documentation (Doc_Num, App_Num);";
+    $indexresult = $conn->query($indexquery);
+
     // fetch information to retrieve the current user's UIN
     $quer = "SELECT * FROM User WHERE Username = '" . $_SESSION['Username'] . "';";
     $res = mysqli_query($conn, $quer);
