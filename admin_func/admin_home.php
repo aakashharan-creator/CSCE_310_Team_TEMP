@@ -37,6 +37,10 @@
         <a href="admin_user_page/admin_user_page.php">
             <button>User Page</button> 
         </a>
+    <h3>Program Information Management</h3>
+    <a href="admin_program_management/admin.php">
+        <button>Program Management</button>
+    </a>
     <h3>Student Program Progress</h3>
         <a href="admin_program_progress/program_progress_page.php">
             <button>Program Progress</button> 
