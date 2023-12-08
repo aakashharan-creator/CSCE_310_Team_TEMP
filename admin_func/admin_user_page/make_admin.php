@@ -16,16 +16,11 @@ $result = $conn->query($check_user_exists);
 if ($result->num_rows == 0) {
     echo "No user with that UIN exists.";
 } else {
-
-    $update_access = "UPDATE User SET has_access = False WHERE UIN = '" . $uin . "';";
-
+    $update_access = "UPDATE User SET User_Type = 'admin' WHERE UIN = '" . $uin . "';";
     if ($conn->query($update_access)) {
-        echo "Successfully revoked access.";
-        echo $update_access;
+        echo "Successfully made admin.";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
 $conn->close(); // Close the database connection
-
-?>

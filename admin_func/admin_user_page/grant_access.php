@@ -15,10 +15,12 @@ $result = $conn->query($check_user_exists);
 
 if ($result->num_rows == 0) {
     echo "No user with that UIN exists.";
+    echo "<a href='./edit_user_page.php' style='position: absolute; top: 25px; right: 25px'>Go back</a>";
 } else {
     $update_access = "UPDATE User SET has_access = True WHERE UIN = '" . $uin . "';";
     if ($conn->query($update_access)) {
         echo "Successfully granted access.";
+        echo "<a href='./edit_user_page.php' style='position: absolute; top: 25px; right: 25px'>Go back</a>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
