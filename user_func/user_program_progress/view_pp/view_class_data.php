@@ -1,7 +1,7 @@
 <?php
-
+// Now $conn is available to use for queries
+require_once '../../../db_connect.php';
 session_start();
-$conn = new mysqli('sql9.freemysqlhosting.net', 'sql9658278', 'ZX2Ybn3eNA', 'sql9658278');
 
 if ($conn->connect_error) {
     echo "$conn->connect_error";

@@ -1,5 +1,9 @@
 <?php
+
+    // Now $conn is available to use for queries
+    require_once '../../../db_connect.php';
     session_start();
+
     // Get input from the insert class form in insert_cert_page.php
     $input_IA_Num = $_POST['IA_Num'];
     $input_Intern_ID = $_POST['Intern_ID'];
@@ -9,7 +13,6 @@
     $session_user = $_SESSION['Username'];
 
 	// Database connection
-	$conn = new mysqli('sql9.freemysqlhosting.net', 'sql9658278', 'ZX2Ybn3eNA', 'sql9658278');
 	if ($conn->connect_error) {
 		echo "$conn->connect_error";
 		die("Connection Failed : " . $conn->connect_error);

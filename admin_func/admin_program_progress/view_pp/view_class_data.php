@@ -1,10 +1,8 @@
 <?php
-
+// Now $conn is available to use for queries
+require_once '../../../db_connect.php';
 // Start session
 session_start();
-
-// Connect to database 
-$conn = new mysqli('sql9.freemysqlhosting.net', 'sql9658278', 'ZX2Ybn3eNA', 'sql9658278');
 
 // Get UIN from session
 $uin = $_SESSION['ViewUIN'];

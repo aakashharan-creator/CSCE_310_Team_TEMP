@@ -1,9 +1,11 @@
 <?php
+    // Now $conn is available to use for queries
+    require_once '../../../db_connect.php';
+    
     // Get input from the insert class form in insert_cert_page.php
     $input_CE_Num = $_POST['CE_Num'];
 
 	// Database connection
-	$conn = new mysqli('sql9.freemysqlhosting.net', 'sql9658278', 'ZX2Ybn3eNA', 'sql9658278');
 	if ($conn->connect_error) {
 		echo "$conn->connect_error";
 		die("Connection Failed : " . $conn->connect_error);
