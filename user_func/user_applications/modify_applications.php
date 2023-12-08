@@ -8,8 +8,8 @@ if ($conn->connect_error) {
     die("Connection Failed : " . $conn->connect_error);
 }
 
-// $name = $_SESSION["Username"];
-$sql = "SELECT (UIN) FROM User WHERE Username='svettsy'";
+$name = $_SESSION["Username"];
+$sql = "SELECT (UIN) FROM User WHERE Username='$name'";
 
 $result_user = $conn->query($sql);
 $result_user = $result_user -> fetch_assoc();
