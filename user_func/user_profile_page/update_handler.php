@@ -27,7 +27,7 @@ $School = $_POST['School'];
 $classification = $_POST['classification'];
 $phone = $_POST['phone'];
 $type = $_POST['type'];
-$date = $_POST['date'];
+$date = $_POST['date']; 
 $gpa = $_POST['gpa'];
 
 // query probably wrong order
@@ -35,7 +35,7 @@ $check_if_exists_in_user = "SELECT * FROM User WHERE (Username = '" . $Username 
 $check_if_exists_in_cs = "SELECT * FROM College_Student WHERE Phone = '" . $phone . "' AND UIN != '" . $_SESSION["UIN"] . "';";
 
 $user_result = $conn->query($check_if_exists_in_user);
-if (strlen($phone) != 9) {
+if (strlen($phone) != 10) {
 	echo "Invalid value for Phone";
 } else if ($user_result->num_rows >= 1) {
 	echo "Account with that Username, Email, or Discord already exists.";
