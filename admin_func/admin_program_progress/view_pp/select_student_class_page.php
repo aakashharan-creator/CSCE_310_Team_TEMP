@@ -8,7 +8,7 @@ session_start();
    <title>Student certificate progress</title>
 </head>
 <body>
-
+<a href="../program_progress_page.php" style="position: absolute; top: 25px; right: 25px;">Go back</a>
     <h2>Student class progress</h2>
     <p>Enter a students UIN to see their class progress</p>
     <form method="post">

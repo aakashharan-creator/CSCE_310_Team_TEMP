@@ -5,6 +5,7 @@
   <script defer src="validate_edit_cert.js"></script>
 </head>
     <body>
+    <a href="../program_progress_page.php" style="position: absolute; top: 25px; right: 25px;">Go back</a>
     <h1> Edit existing certification record</h1>
       <p> Make sure to put the right CertE_Num to edit the correct record </p>
 
