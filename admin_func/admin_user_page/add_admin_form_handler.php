@@ -23,6 +23,12 @@ $result = $conn->query($query_uin);
 if ($result->num_rows >= 1) {
     echo "<h2>Error: User with that UIN, Email, Discord, or Username already exists</h2>";
     echo "<a href='add_user_page.php'>Go back</a>";
+} else if (strlen($uin) != 9 || !is_numeric($uin)) {
+    echo "<h2>Error: Invalid UIN</h2>";
+    echo "<a href='add_user_page.php'>Go back</a>";
+} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "<h2>Error: Invalid email</h2>";
+    echo "<a href='add_user_page.php'>Go back</a>";
 } else {
     // Query the database for user authentication
     $query = "INSERT INTO User 
