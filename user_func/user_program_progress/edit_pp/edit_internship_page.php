@@ -20,22 +20,22 @@ Year
       <form id="form" form method="post" action="edit_internship_data.php">
 
       <div>
-          <label>IA_Num</label><br>
-          <input type="text" name="IA_Num" id="IA_Num" required>
+          <label>IA_Num (number)</label><br>
+          <input type="number" name="IA_Num" id="IA_Num" required>
           </div>
 
           <div>
-          <label>Intern_ID</label><br>
+          <label>Intern_ID (1-10)</label><br>
           <input type="number" name="Intern_ID" id="Intern_ID" required>
           </div>
 
           <div>
-          <label>Status</label><br>
+          <label>Status [Done, In Progress, Not Started (Case sensitive)]</label><br>
           <input type="text" name="Status" id="Status" required>
           </div>
 
           <div>
-          <label>Year</label><br>
+          <label>Year (Format: xxxx)</label><br>
           <input type="text" name="Year" id="Year" required> 
           </div>
           
