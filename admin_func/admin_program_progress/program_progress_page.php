@@ -12,11 +12,6 @@
     <h1>Student Program Progress Page</h1>
 
 
-    <h3>View a students certificate progress</h3>
-    <a href="./view_pp/select_student_cert_page.php">
-            <button>View student certificates</button> 
-    </a>
-
     <h3>View all students with finished certificates</h3>
     <a href="./view_pp/index_cert_done_page.php">
             <button>Finished certificates</button> 
@@ -25,6 +20,15 @@
     <h3>View all students with in progress certificates</h3>
     <a href="./view_pp/view_cert_in_progress_page.php">
             <button>In progress certificates</button> 
+    </a>
+
+    <br>
+    <br>
+    <br>
+
+    <h3>View a students certificate progress</h3>
+    <a href="./view_pp/select_student_cert_page.php">
+            <button>View student certificates</button> 
     </a>
 
     <h3>View a students class progress</h3>

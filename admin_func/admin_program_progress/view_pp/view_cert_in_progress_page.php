@@ -56,5 +56,5 @@ $result = mysqli_query($conn, $sql);
 
 // Close database connection
 mysqli_close($conn);
-
+echo "<a href='../program_progress_page.php'>Go back to program progress page</a>";
 ?>

@@ -38,7 +38,7 @@
             <button>User Page</button> 
         </a>
     <h3>Student Program Progress</h3>
-        <a href="student_program_progress/program_progress_page.php">
+        <a href="admin_program_progress/program_progress_page.php">
             <button>Program Progress</button> 
         </a>
     <h3>Event Page</h3>
