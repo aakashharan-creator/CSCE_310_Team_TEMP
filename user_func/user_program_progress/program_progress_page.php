@@ -9,7 +9,7 @@
 
 <body>
     <a href="../../index.php" style="position: absolute; top:25px; right: 25px;">Logout</a>
-    <a href="../user_home_page.php" style="position: absolute; top:50px; right: 25px;">Home Page</a>
+    <a href="../home.php" style="position: absolute; top:50px; right: 25px;">Home Page</a>
     <h1>Program Progress Page</h1>
 
 
