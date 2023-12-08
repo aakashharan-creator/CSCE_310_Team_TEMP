@@ -17,9 +17,7 @@ $uin = $result_user["UIN"];
 
 $sql = "SELECT * FROM Application WHERE UIN='$uin'";
 
-$result_user = $conn->query($sql);
-
-
+$result = $conn->query($sql);
 
 ?>
 
@@ -37,12 +35,12 @@ $result_user = $conn->query($sql);
                     // return ; this would make everything else stop rendering
                   }else{
                     echo "<table style=\"text-align: left; border: black solid 2px;\">";
-                    echo "<tr style=\"background-color: red; border-bottom: black 2px solid;\">
-                      <th style=\"padding: auto\">id</th>
-                      <th style=\"margin: auto\">Program Name</th>
-                      <th style=\"margin: auto\">Description</th>
-                      <th> Report </th>
-                    </tr>";
+                    // echo "<tr style=\"background-color: red; border-bottom: black 2px solid;\">
+                    //   <th style=\"padding: auto\">id</th>
+                    //   <th style=\"margin: auto\">Name</th>
+                    //   <th style=\"margin: auto\">Description</th>
+                    //   <th> Report </th>
+                    // </tr>";
                   }
 
                   while($row = $result->fetch_assoc()){
@@ -50,7 +48,7 @@ $result_user = $conn->query($sql);
                     foreach($row as $data){
                       echo "<td>$data</td>";
                     }
-                    $id = $row['Program_Num'];
+                    $id = $row['App_Num'];
                     echo "<td style=\"text-align:center\"> <a class=\"btn btn-default\"  href=\"program_report.php/?id=$id\">View</a></td>";
                     echo "</tr>";
                   }
