@@ -1,8 +1,3 @@
-<!--
-   DELETE FROM CE_Enrollment
-    WHERE CE_Num = 4;
--->
-
 <?php
     // Now $conn is available to use for queries
     require_once '../../../db_connect.php';
