@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script src="user_home_data.js"></script>
     <title>Document</title>
 </head>
+
 <body onload="populateUserData()">
     <h1>Profile Information</h1>
     <a href="../home.php" style="position: absolute; top: 25px; right: 25px;">Go back</a>
@@ -17,6 +19,10 @@
             <th>Value</th>
         </tr>
     </table>
-
+    <form method="post" action="handle_deactivate.php">
+        <button>Deactivate Account</button>
+    </form>
+    <a href="update_details_page.php">Update details</a>
 </body>
+
 </html>

@@ -14,6 +14,11 @@
         <a href="./user_profile_page/view_profile_info.php">
             <button>View</button> 
         </a>
+
+    <h3>My Applications</h3>
+        <a href="./user_applications/index.php">
+            <button>Applications</button>
+        </a>
     <h3>My Program Progress</h3>
         <a href="./user_program_progress/program_progress_page.php">
             <button>Program Progress</button> 

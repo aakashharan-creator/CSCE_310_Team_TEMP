@@ -7,6 +7,14 @@ if ($conn->connect_error) {
     echo "$conn->connect_error";
     die("Connection Failed : " . $conn->connect_error);
 } else {
+    // create indexes for the documentation queries
+    $indexquery = "CREATE INDEX Doc_Num_App_Num_Index ON Documentation (Doc_Num, App_Num);";
+    $indexresult = $conn->query($indexquery);
+    
+    // create a view for the documentation queries
+    $createViewQuery = "CREATE VIEW Doc_View AS SELECT * FROM Documentation;";
+    $createViewResult = $conn->query($createViewQuery);
+
     // fetch information to retrieve the current user's UIN
     $quer = "SELECT * FROM User WHERE Username = '" . $_SESSION['Username'] . "';";
     $res = mysqli_query($conn, $quer);
@@ -14,6 +22,7 @@ if ($conn->connect_error) {
     $newrow = $res->fetch_assoc();
     $newuin = $newrow["UIN"];
 
+    // use the view in the query
     $query = "SELECT * FROM Application WHERE UIN = '" . $newuin . "';";
     $result = mysqli_query($conn, $query);
 
@@ -24,7 +33,7 @@ if ($conn->connect_error) {
     while($row = $result->fetch_assoc()) {
         $app_num = $row["App_Num"];
 
-        $query2 = "SELECT * FROM Documentation WHERE App_Num = '" . $app_num . "';";
+        $query2 = "SELECT * FROM Doc_View WHERE App_Num = '" . $app_num . "';";
         $result2 = mysqli_query($conn, $query2);
 
         while ($row2 = $result2->fetch_array()) {

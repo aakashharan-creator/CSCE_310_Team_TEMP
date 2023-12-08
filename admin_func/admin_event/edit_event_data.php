@@ -15,8 +15,12 @@
 		echo "$conn->connect_error";
 		die("Connection Failed: " . $conn->connect_error);
 	} else {
+        // create a view for the event queries
+        $createViewQuery = "CREATE VIEW Event_View AS SELECT * FROM Event;";
+        $createViewResult = $conn->query($createViewQuery);
+
         // check if event id is valid
-        $query = "SELECT * FROM Event WHERE Event_ID = '" . $input_Event_ID . "';";
+        $query = "SELECT * FROM Event_View WHERE Event_ID = '" . $input_Event_ID . "';";
         $result = $conn->query($query);
         if ($conn->affected_rows == 0) {
             echo "<h2>Invalid Event ID.</h2>";
@@ -30,7 +34,7 @@
         }
         
         if (!$skip) {
-            $query1 = "UPDATE Event SET Start_Date = '" . $input_Start_Date . "' WHERE Event_ID = '" . $input_Event_ID . "';";
+            $query1 = "UPDATE Event_View SET Start_Date = '" . $input_Start_Date . "' WHERE Event_ID = '" . $input_Event_ID . "';";
             $result1 = $conn->query($query1);
 
             if ($conn->affected_rows == 0) {
@@ -46,7 +50,7 @@
         }
         
         if (!$skip) {
-            $query1 = "UPDATE Event SET Start_Time = '" . $input_Start_Time . "' WHERE Event_ID = '" . $input_Event_ID . "';";
+            $query1 = "UPDATE Event_View SET Start_Time = '" . $input_Start_Time . "' WHERE Event_ID = '" . $input_Event_ID . "';";
             $result1 = $conn->query($query1);
         
             if ($conn->affected_rows == 0) {
@@ -62,7 +66,7 @@
         }
         
         if (!$skip) {
-            $query1 = "UPDATE Event SET Location = '" . $input_Location . "' WHERE Event_ID = '" . $input_Event_ID . "';";
+            $query1 = "UPDATE Event_View SET Location = '" . $input_Location . "' WHERE Event_ID = '" . $input_Event_ID . "';";
             $result1 = $conn->query($query1);
 
             if ($conn->affected_rows == 0) {
@@ -78,7 +82,7 @@
         }
         
         if (!$skip) {
-            $query1 = "UPDATE Event SET End_Date = '" . $input_End_Date . "' WHERE Event_ID = '" . $input_Event_ID . "';";
+            $query1 = "UPDATE Event_View SET End_Date = '" . $input_End_Date . "' WHERE Event_ID = '" . $input_Event_ID . "';";
             $result1 = $conn->query($query1);
 
             if ($conn->affected_rows == 0) {
@@ -94,7 +98,7 @@
         }
         
         if (!$skip) {
-            $query1 = "UPDATE Event SET End_Time = '" . $input_End_Time . "' WHERE Event_ID = '" . $input_Event_ID . "';";
+            $query1 = "UPDATE Event_View SET End_Time = '" . $input_End_Time . "' WHERE Event_ID = '" . $input_Event_ID . "';";
             $result1 = $conn->query($query1);
 
             if ($conn->affected_rows == 0) {

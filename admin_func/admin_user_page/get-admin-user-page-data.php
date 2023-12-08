@@ -7,13 +7,19 @@ if ($conn->connect_error) {
     echo "$conn->connect_error";
     die("Connection Failed : " . $conn->connect_error);
 } else {
-    $result = mysqli_query($conn, "SELECT * FROM User");
-    $rows = array();
+    $result = mysqli_query($conn, "SELECT * FROM admins;");
+    $users = array();
     while ($row = $result->fetch_array()) {
         $value = array($row["UIN"], $row["First_Name"], $row["User_Type"]);
-        array_push($rows, $value);
+        array_push($users, $value);
+    }
+
+    $result = mysqli_query($conn, "SELECT * FROM students;");
+    while ($row = $result->fetch_array()) {
+        $value = array($row["UIN"], $row["First_Name"], $row["User_Type"]);
+        array_push($users, $value);
     }
 }
 
-echo json_encode($rows);
+echo json_encode($users);
 ?>
