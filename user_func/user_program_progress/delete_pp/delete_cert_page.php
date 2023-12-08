@@ -10,7 +10,7 @@
 
       <div>
           <div>
-          <label>CertE_Num</label><br>
+          <label>CertE_Num (number)</label><br>
           <input type="number" name="CertE_Num" required>
       </div>
 
