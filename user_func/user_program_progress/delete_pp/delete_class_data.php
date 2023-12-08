@@ -1,8 +1,3 @@
-<!--
-   DELETE FROM CE_Enrollment
-    WHERE CE_Num = 4;
--->
-
 <?php
     // Get input from the insert class form in insert_cert_page.php
     $input_CE_Num = $_POST['CE_Num'];

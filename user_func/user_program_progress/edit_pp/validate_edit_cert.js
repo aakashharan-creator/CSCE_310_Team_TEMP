@@ -1,4 +1,3 @@
-const cert_ID = document.getElementById('Cert_ID')
 const status_ = document.getElementById('Status')
 const training_status = document.getElementById('Training_Status')
 const program_num = document.getElementById('Program_Num')
@@ -13,12 +12,6 @@ const validSemester = ['Fall', 'Spring', 'Summer'];
 
 form.addEventListener('submit', (e) => {
   let messages = []
-
-
-  // check cert_ID
-  if (cert_ID.value > 10) {
-    messages.push('Incorrect Cert_ID')
-  }
   
   // check status
   if (!validStatuses.includes(status_.value)) {
