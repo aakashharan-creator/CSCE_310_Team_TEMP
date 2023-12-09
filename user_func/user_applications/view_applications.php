@@ -8,6 +8,8 @@ if ($conn->connect_error) {
     die("Connection Failed : " . $conn->connect_error);
 }
 
+
+
 $name = $_SESSION["Username"];
 $sql = "SELECT (UIN) FROM User WHERE Username='$name'";
 
@@ -15,7 +17,7 @@ $result_user = $conn->query($sql);
 $result_user = $result_user -> fetch_assoc();
 $uin = $result_user["UIN"];
 
-$sql = "SELECT * FROM Application WHERE UIN='$uin'";
+$sql = "SELECT App_Num, Name, UIN, Uncom_Cert, Com_Cert, Purpose_Statement FROM Application INNER JOIN program_view ON Application.Program_Num = program_view.Program_Num WHERE UIN='$uin'";
 
 $result = $conn->query($sql);
 
@@ -23,6 +25,7 @@ $result = $conn->query($sql);
 
 <htlm>
     <body>
+    
     <?php 
                   // if(isset($select_result)){
                   //   echo "<h4>Now have the data</h4>";
@@ -35,9 +38,9 @@ $result = $conn->query($sql);
                     // return ; this would make everything else stop rendering
                   }else{
                     echo "<table class=\"table\" style=\"text-align: left; border: black solid 2px;\">";
-                    echo "<tr style=\"background-color: red; border-bottom: black 2px solid;\">
-                      <th style=\"padding: auto\">App_Num</th>
-                      <th style=\"margin: auto\">Program_Num</th>
+                    echo "<tr style=\"background-color: lightgreen; border-bottom: black 2px solid;\">
+                      <th style=\"padding: auto\">Application ID</th>
+                      <th style=\"margin: auto\">Program Name</th>
                       <th style=\"margin: auto\">UIN</th>
                       <th style=\"margin: auto\">UCERT</th>
                       <th style=\"margin: auto\">CCERT</th>
@@ -60,6 +63,22 @@ $result = $conn->query($sql);
                   echo "</table>";
 
             ?>
+            <br>
+            <?php 
+              if(isset($_GET["msg"])){
+                if($_GET["msg"] == "failed_id"){
+                  echo "Resource requested doesn't exist";
+                }else if($_GET["msg"] == "del_successful"){
+                  echo "Successfully Deleted";
+                }
+              }
+            
+            ?>
+            <div>
+                <form action="./" method="get">
+                    <button>Go back</button>
+                </form>
+            </div>
     </body>
 </html>
 

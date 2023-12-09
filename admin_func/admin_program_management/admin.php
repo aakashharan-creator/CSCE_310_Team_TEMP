@@ -44,10 +44,10 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     $program_id = $_GET["program_id"];
 
 
-    $query = $conn->prepare("DELETE FROM Programs WHERE Program_Num=?");
-    $query->bind_param("s", $program_id);
+    $query = "DELETE FROM Programs WHERE Program_Num='$program_id'";
+    // $query->bind_param("s", $program_id);
 
-    $delete_result = $query->execute();
+    $delete_result = $conn->query($query);
 
   }
 
@@ -125,24 +125,19 @@ if(!$doSelect){
     <input type="hidden" name="frmname" value="selectForm"/>
   </form>
     <script>
-      function getSelect(){
-          $.ajax({
-            url: '../php_handlers/admin_info_handler.php',
-            type: 'GET',
-            data: {
-                action: 'select_info'
-            },
-            success: function(result){
-                console.log(result);
-                // location.reload();
-            }
-        })
-      }
+      const delete_validation = () => {
+        <?php
 
-      if(<?php echo $doSelect; ?>){
-          console.log("Bout to do the get request");
-          // getSelect();
-          // console.log(document.getElementById('theForm').submit());
+        // $full_arr = $result;
+
+        // $full_arr = $full_arr->fetch_all(MYSQLI_NUM);
+        
+        ?>
+        const id = document.getElementById("deleteId").value;
+
+
+        console.log(possible_id)
+
       }
 
     </script>
@@ -154,6 +149,9 @@ if(!$doSelect){
             <br>
           </div>
           <div class="panel-body">
+            <form style="text-align:right" action="../admin_home.php" method="get">
+              <button>Home</button>
+            </form>
             <h2>View the current pograms</h2>
             <?php 
                   // if(isset($select_result)){
@@ -267,11 +265,13 @@ if(!$doSelect){
                 
               </form>
               <?php 
-                
+                // $res = (mysqli_result) $delete_result;
                 if(isset($delete_result)){
                   if( $delete_result === false ){
                     echo "Failure to delete";
-                  }else{
+                  }/*else if( $delete_result->fetch_assoc() === false ){
+                    echo "ID doesn't exist";
+                  }*/else{
                     echo "Deleted Sucessfully";
                   }
                 }

@@ -44,6 +44,13 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET") {
     </head>
 
     <body>
+        <!-- <form style="display: block;" action="/user_func/home.php" method="get">
+            <button type="submit">User Home</button>
+        </form> -->
+        <div style="text-align: right; position: absolute; top:25px; right: 25px;">
+        <a style=" " href="/user_func/home.php">User Home</a>
+        </div>
+        <!-- <br> -->
         <h2>View and Update Applications</h2>
         <form action="view_applications.php" method="get">
             <button type="submit">See current applications</button>
@@ -57,14 +64,14 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET") {
         </form>
     </body>
 <?php
-if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET") {
-    $html_body = "
-            <body>
-                <h2>Conditionally showing on restart</h2>
-            </body>
-            ";
-    echo $html_body;
-}
+// if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET") {
+//     $html_body = "
+//             <body>
+//                 <h2>Conditionally showing on restart</h2>
+//             </body>
+//             ";
+//     echo $html_body;
+// }
 
 
 ?>
