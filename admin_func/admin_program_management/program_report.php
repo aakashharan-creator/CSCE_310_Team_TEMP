@@ -1,5 +1,6 @@
 <?php 
 
+// Establishing the db connecton
 $conn = new mysqli('sql9.freemysqlhosting.net', 'sql9658278', 'ZX2Ybn3eNA', 'sql9658278');
 
 if ($conn->connect_error) {
@@ -25,6 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
   }
 
     //at this point should already have the id so
+    //this does all the numerical reporting that is showed on this page
     $query = "SELECT COUNT(*) FROM Event WHERE Program_Num=$id";
 
     $event_result = $conn->query($query);
@@ -38,7 +40,6 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 
     $cert_result = $conn->query($query);
 
-    // $rows = $application_result->num_rows
 
 }
 
@@ -78,12 +79,8 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         border-bottom: 2px solid black;
         border-radius: 5px;
         width: fit-content;
-        /* text-align: center; */
-        /* text-decoration: underline; */
-        /* text-decoration-style: wavy; */
       }
-      /* h1   {color: blue;} */
-      /* p    {color: red;} */
+    
 </style>
   </head>
   <body>
@@ -91,28 +88,6 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
   <form style="background-color: red; display: none;" method="get" action="../php_handlers/admin_info_handler.php" id="theForm" name="selectForm" enctype="multipart/form-data">
     <input type="hidden" name="frmname" value="selectForm"/>
   </form>
-    <script>
-      function getSelect(){
-          $.ajax({
-            url: '../php_handlers/admin_info_handler.php',
-            type: 'GET',
-            data: {
-                action: 'select_info'
-            },
-            success: function(result){
-                console.log(result);
-                // location.reload();
-            }
-        })
-      }
-
-      if(<?php echo $doSelect; ?>){
-          console.log("Bout to do the get request");
-          // getSelect();
-          // console.log(document.getElementById('theForm').submit());
-      }
-
-    </script>
     <div class="container">
       <div class="row col-md-6 col-md-offset-3">
       <div class="panel panel-primary" style="height: 45%;">
@@ -121,6 +96,8 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
               <h2>Program Report</h2>
             </div>
             <br>
+
+            <!-- Have the program information populated and unmutable -->
             <?php $row = $readData -> fetch_assoc() ?>
 
             <div class="col-xs-12">
@@ -138,9 +115,12 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
             </div>
 
           </div>
+          <!-- Report body -->
           <div class="panel-body">
             <h3 style="text-align: center">Report Information</h3>
             <br>
+
+            <!-- Putting the results of the count queries in their appropiate sections -->
             <div>
               <h4 class="border_bottom">Events with Program</h4>
               <p><?php echo $event_result -> fetch_column(0);?></p>
@@ -160,6 +140,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
             </div> 
 
           </div>
+          <!-- Redirection back to the admin programs page -->
           <div class="col panel panel-secondary">
                   <!-- Need to keep it as ../admin.php since the url adds the /?id= and it makes it think it's a new directory -->
                   <form action="../admin.php" method="get">

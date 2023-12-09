@@ -1,11 +1,3 @@
-<?php
-
-if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET") {
-
-
-}
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -44,36 +36,22 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET") {
     </head>
 
     <body>
-        <!-- <form style="display: block;" action="/user_func/home.php" method="get">
-            <button type="submit">User Home</button>
-        </form> -->
+        <!-- Redirecting back to the user home page -->
         <div style="text-align: right; position: absolute; top:25px; right: 25px;">
         <a style=" " href="/user_func/home.php">User Home</a>
         </div>
-        <!-- <br> -->
+        <!-- Redirecting them to the view page-->
         <h2>View and Update Applications</h2>
         <form action="view_applications.php" method="get">
             <button type="submit">See current applications</button>
         </form>
 
         <br>
-
+        <!-- Redirecting them to add new applications -->
         <h2>Add New Applications</h2>
         <form action="modify_applications.php" method="get">
             <button type="submit">Add Application</button>
         </form>
     </body>
-<?php
-// if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "GET") {
-//     $html_body = "
-//             <body>
-//                 <h2>Conditionally showing on restart</h2>
-//             </body>
-//             ";
-//     echo $html_body;
-// }
-
-
-?>
 
 </html>

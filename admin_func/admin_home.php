@@ -31,8 +31,11 @@
 </head>
 
 <body>
+    <!-- Redirecting back to logout -->
     <a href="../index.php" style="position: absolute; top:25px; right: 25px;">Logout</a>
     <h1>Admin Home Page</h1>
+
+    <!-- List of Admin Functionalities -->
     <h3>User Page</h3>
         <a href="admin_user_page/admin_user_page.php">
             <button>User Page</button> 
